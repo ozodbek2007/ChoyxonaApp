@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_screens/number_confirm.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_text_field.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
@@ -118,18 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 60,
                 width: double.infinity,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      backgroundColor: AppColors.appColor,
-                    ),
-                    onPressed: () {},
-                    child: Text("Ro'yhatdan O'tish",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold))),
+                child: buttonBuilder(() =>navigate(context, NumberConfirmScreen()), "Ro'yhatdan O'tish", AppColors.appColor, _style, AppColors.appColor),
               ),
               const Gap(80),
               Row(

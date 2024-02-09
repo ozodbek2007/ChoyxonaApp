@@ -4,6 +4,8 @@ import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_screens/register_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
+import '../../widgets/app_button.dart';
+
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
 
@@ -53,32 +55,13 @@ class _WelcomePageState extends State<WelcomePage> {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          _buttonBuilder(() {}, "Tizmiga Kirish", AppColors.appColor, TextStyle(color: Colors.white,fontWeight: FontWeight.bold),AppColors.appColor),
+          buttonBuilder(() {}, "Tizmiga Kirish", AppColors.appColor, TextStyle(color: Colors.white,fontWeight: FontWeight.bold),AppColors.appColor),
           const Gap(20),
-          _buttonBuilder(() =>navigate(context, RegisterPage()), "Ro'yhatdan O'tish", Colors.white, TextStyle(color: Colors.black,fontWeight: FontWeight.bold),Colors.black),
+          buttonBuilder(() =>navigate(context, RegisterPage()), "Ro'yhatdan O'tish", Colors.white, TextStyle(color: Colors.black,fontWeight: FontWeight.bold),Colors.black),
           const Gap(15),
         ],
       ),
     );
   }
-  _buttonBuilder(VoidCallback pressed, String childText,Color color,TextStyle textStyle,Color borderColor){
-    return SizedBox(
-      height: 60,
-      width: double.infinity,
-      child: ElevatedButton(
-        onPressed: pressed, child: Text(childText,style:textStyle),
-      style: ElevatedButton.styleFrom(
-        side: BorderSide(
-          color: borderColor
-        ),
-        elevation: 0,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10)
-          ),
-        backgroundColor: color,
-      ),
-      ),
-    );
-  }
+
 }
