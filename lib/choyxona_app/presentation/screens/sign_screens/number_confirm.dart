@@ -19,7 +19,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
   TextEditingController _number = TextEditingController();
 
   var maskFormatter = new MaskTextInputFormatter(
-      mask: '## ###-##-##',
+      mask: '##-###-##-##',
       type: MaskAutoCompletionType.lazy
   );
 

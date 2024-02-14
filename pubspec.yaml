@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   gap: ^3.0.1
   mask_text_input_formatter: ^2.8.0
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
   assets:
     - assets/img/
     - assets/country_image/
+    - assets/exe_restuarnt/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

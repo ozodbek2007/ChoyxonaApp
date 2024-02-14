@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 class SuccessPage extends StatefulWidget {
   const SuccessPage({super.key});
@@ -37,7 +39,7 @@ class _SuccessPageState extends State<SuccessPage> {
               ),
               const Gap(120),
               buttonBuilder(
-                  () {},
+                  () =>navigatePushRemove(context, MainPage()),
                   "Davom Etish",
                   AppColors.appColor,
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
