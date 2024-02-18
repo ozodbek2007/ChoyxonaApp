@@ -15,9 +15,6 @@ class SMSPage extends StatefulWidget {
 }
 
 class _SMSPageState extends State<SMSPage> {
-
-
-
   TextEditingController _first = TextEditingController();
   TextEditingController _second = TextEditingController();
   TextEditingController _third = TextEditingController();
@@ -27,6 +24,7 @@ class _SMSPageState extends State<SMSPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       body: _smsSection(),
     );
   }
@@ -42,7 +40,9 @@ class _SMSPageState extends State<SMSPage> {
             const Gap(60),
             leadingIcon(context),
             const Gap(60),
-            Center(child: Text("Telefon Raqamingizni      Tasdiqlang", style: TextStyles.titleTextStyle)),
+            Center(
+                child: Text("Telefon Raqamingizni      Tasdiqlang",
+                    style: TextStyles.titleTextStyle)),
             const Gap(10),
             Text(
                 "Telefoningizga faollashtirish kodi bilan SMS yubordik +998 97 977 97 77"),
@@ -60,7 +60,15 @@ class _SMSPageState extends State<SMSPage> {
               ],
             ),
             const Gap(25),
-            buttonBuilder(() =>navigatePushRemove(context, SuccessPage()), "Tasdiqlash", AppColors.appColor, TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 15), AppColors.appColor)
+            buttonBuilder(
+                () => navigatePushRemove(context, SuccessPage()),
+                "Tasdiqlash",
+                AppColors.appColor,
+                TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 15),
+                AppColors.appColor)
           ],
         ),
       ),
@@ -85,8 +93,7 @@ class _SMSPageState extends State<SMSPage> {
     );
   }
 
-  _enterNumberSection(
-      TextEditingController controller ){
+  _enterNumberSection(TextEditingController controller) {
     return SizedBox(
       height: 120,
       width: 60,
@@ -95,24 +102,17 @@ class _SMSPageState extends State<SMSPage> {
         maxLength: 1,
         controller: controller,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(
-              color: Colors.grey
-            )
-          ),
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(color: Colors.grey)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(
-                  color: Colors.black
-              )
-          ),
+              borderSide: BorderSide(color: Colors.black)),
           disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(
-                  color: Colors.black
-              )
-          ),
+              borderSide: BorderSide(color: Colors.black)),
         ),
       ),
     );

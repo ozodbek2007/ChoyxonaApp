@@ -26,6 +26,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       body: _confirmNumberSection(),
     );
   }
