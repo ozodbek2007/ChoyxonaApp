@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/login_page.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 class PasswordChangedPage extends StatefulWidget {
   const PasswordChangedPage({super.key});
@@ -20,7 +22,7 @@ class _PasswordChangedPageState extends State<PasswordChangedPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Gap(100),
+            Gap(101),
             Align(
               alignment: Alignment.center,
               child: Lottie.asset("assets/anim/anim1.json",width: 300,height:300),
@@ -40,9 +42,7 @@ class _PasswordChangedPageState extends State<PasswordChangedPage> {
                   ),
                   backgroundColor: const Color(0xff0bff99),
                 ),
-                onPressed: (){
-                  Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> MainPage()));
-                },
+                onPressed: ()=>navigatePushRemove(context, LoginPage()),
                 child: const Text("Davom ettirish",style: TextStyle(color: Color(0xffffffff),fontWeight: FontWeight.bold,fontSize: 15),),
               ),
             ),

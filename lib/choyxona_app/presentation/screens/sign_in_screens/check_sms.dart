@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/return_password.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 class CheckSms extends StatefulWidget {
   const CheckSms({super.key});
@@ -20,17 +22,11 @@ class _CheckSmsState extends State<CheckSms> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: (){
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new),
-        ),
-      ),
-      body:  _smsSection(),
+      backgroundColor: Theme.of(context).primaryColor,
+      body: _smsSection(),
     );
   }
+
   _smsSection() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -39,13 +35,21 @@ class _CheckSmsState extends State<CheckSms> {
           // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Gap(80),
+            leadingIcon(context),
             const Gap(20),
-            Center(child: Text("Iltimos,SMS ni tekshiring",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35), )),
+            Center(
+                child: Text(
+              "Iltimos,SMS ni tekshiring",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+            )),
             const Gap(10),
             Row(
               children: [
                 Text(
-                  "+998 93 *** *** 54",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+                  "+998 93 *** *** 54",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.black),
                 ),
                 Gap(5),
                 Text("Biz kod yubordik")
@@ -64,10 +68,14 @@ class _CheckSmsState extends State<CheckSms> {
                   ),
                   backgroundColor: const Color(0xff0bff99),
                 ),
-                onPressed: (){
-                  Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const ReturnPassword()));
-                },
-                child: const Text("Tasdiqlash",style: TextStyle(color: Color(0xffffffff),fontWeight: FontWeight.bold,fontSize: 15),),
+                onPressed: () =>navigatePushRemove(context, ReturnPassword()),
+                child: const Text(
+                  "Tasdiqlash",
+                  style: TextStyle(
+                      color: Color(0xffffffff),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
               ),
             ),
             const Gap(100),
@@ -75,10 +83,15 @@ class _CheckSmsState extends State<CheckSms> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                TextButton(onPressed: (){
-
-                }, child: Text("Kodni qayta yuboring",style: TextStyle(color: Colors.black),))
-                , Text("00:20",)
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Kodni qayta yuboring",
+                      style: TextStyle(color: Colors.black),
+                    )),
+                Text(
+                  "00:20",
+                )
               ],
             ),
           ],
@@ -104,33 +117,26 @@ class _CheckSmsState extends State<CheckSms> {
     );
   }
 
-  _enterNumberSection(
-      TextEditingController controller ){
+  _enterNumberSection(TextEditingController controller) {
     return SizedBox(
       height: 120,
       width: 60,
       child: TextField(
+        maxLength: 1,
         keyboardType: TextInputType.number,
         controller: controller,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(
-                  color: Colors.grey
-              )
-          ),
+              borderSide: BorderSide(color: Colors.grey)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(
-                  color: Colors.black
-              )
-          ),
+              borderSide: BorderSide(color: Colors.black)),
           disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(
-                  color: Colors.black
-              )
-          ),
+              borderSide: BorderSide(color: Colors.black)),
         ),
       ),
     );

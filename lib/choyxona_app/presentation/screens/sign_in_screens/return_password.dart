@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/password_change.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
@@ -19,18 +20,15 @@ class _ReturnPasswordState extends State<ReturnPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: (){
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new),
-        ),
-      ),
-      body: Padding(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Gap(60),
+            // leadingIcon(context),
+            const Gap(20),
             Align(alignment:Alignment.topLeft,child: Text("Parolni tiklash",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35),)),
             Gap(8),
             Align(
@@ -46,8 +44,29 @@ class _ReturnPasswordState extends State<ReturnPassword> {
               obscureText: _isOpenn,
               controller: _characterController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(
+                filled: true,
+                fillColor: Colors.white,
+
+                enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.grey.shade300,
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
                 ),
                 hintText: "8 ta belgidan iborat bo'lishi kerak",hintStyle: TextStyle(color: Colors.grey.shade500),
                 suffixIcon: IconButton(
@@ -68,8 +87,28 @@ class _ReturnPasswordState extends State<ReturnPassword> {
               obscureText: _isOpenned,
               controller: _passwordController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(
+                filled: true,
+                fillColor: Colors.white,
+                enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.grey.shade300,
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
                 ),
                 hintText: "Parolni qayta kiriting",hintStyle: TextStyle(color: Colors.grey.shade500),
                 suffixIcon: IconButton(
