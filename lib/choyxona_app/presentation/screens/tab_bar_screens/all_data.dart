@@ -4,8 +4,9 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/exe_model/rest.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/single_screens/detail_screen.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
+
+import 'detail_screens_and_tabs/detail_screen.dart';
 
 class AllData extends StatefulWidget {
   const AllData({super.key});

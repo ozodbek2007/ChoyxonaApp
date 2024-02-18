@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:lottie/lottie.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
@@ -29,7 +30,7 @@ class _SuccessPageState extends State<SuccessPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("✨",style: TextStyle(fontSize: 105)),
+              Lottie.asset("assets/anim/anim1.json",width: 300,height:300),
               Text("Xush Kelibsiz!", style: TextStyles.titleTextStyle),
               const Gap(30),
               Padding(

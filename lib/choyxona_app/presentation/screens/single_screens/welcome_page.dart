@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/sign_screens/register_page.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/login_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 import '../../widgets/app_button.dart';
+import '../sign_up_screens/register_page.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -55,7 +56,7 @@ class _WelcomePageState extends State<WelcomePage> {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          buttonBuilder(() {}, "Tizmiga Kirish", AppColors.appColor, TextStyle(color: Colors.white,fontWeight: FontWeight.bold),AppColors.appColor),
+          buttonBuilder(() =>navigate(context, LoginPage()), "Tizmiga Kirish", AppColors.appColor, TextStyle(color: Colors.white,fontWeight: FontWeight.bold),AppColors.appColor),
           const Gap(20),
           buttonBuilder(() =>navigate(context, RegisterPage()), "Ro'yhatdan O'tish", Colors.white, TextStyle(color: Colors.black,fontWeight: FontWeight.bold),Colors.black),
           const Gap(15),

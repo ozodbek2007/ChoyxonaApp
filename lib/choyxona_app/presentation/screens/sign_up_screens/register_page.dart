@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/sign_screens/number_confirm.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/login_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_text_field.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 import '../../../constant/leading_icon.dart';
+import 'number_confirm.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -120,7 +121,12 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 60,
                 width: double.infinity,
-                child: buttonBuilder(() =>navigate(context, NumberConfirmScreen()), "Ro'yhatdan O'tish", AppColors.appColor, _style, AppColors.appColor),
+                child: buttonBuilder(
+                    () => navigate(context, NumberConfirmScreen()),
+                    "Ro'yhatdan O'tish",
+                    AppColors.appColor,
+                    _style,
+                    AppColors.appColor),
               ),
               const Gap(80),
               Row(
@@ -152,7 +158,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text("Hisobingiz bormi?  "),
                   InkWell(
-                      onTap: () {},
+                      onTap: () =>navigate(context, LoginPage()),
                       child: Text("Tizmiga kiring", style: _style)),
                 ],
               )
@@ -168,17 +174,15 @@ class _RegisterPageState extends State<RegisterPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         InkWell(
-          onTap: (){},
+          onTap: () {},
           child: Ink(
-            child:
-            _faceGoogleBuilder("assets/img/facebook.png", "Facebook"),
+            child: _faceGoogleBuilder("assets/img/facebook.png", "Facebook"),
           ),
         ),
         InkWell(
-          onTap: (){},
+          onTap: () {},
           child: Ink(
-            child:
-            _faceGoogleBuilder("assets/img/google.png", "Google"),
+            child: _faceGoogleBuilder("assets/img/google.png", "Google"),
           ),
         )
       ],
@@ -206,5 +210,4 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
   }
-
 }

@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/sign_screens/success_page.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_up_screens/success_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 

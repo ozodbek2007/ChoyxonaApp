@@ -18,7 +18,7 @@ class ChoyxonaApp extends StatelessWidget {
         primaryColor: Color(0xfff4f4f4)
       ),
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: MainPage(),
     );
   }
 }

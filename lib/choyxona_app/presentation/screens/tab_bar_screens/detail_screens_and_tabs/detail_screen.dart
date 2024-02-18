@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/exe_model/rest.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_tabs/menu_screen.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_tabs/reviews_screen.dart';
-import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
-import '../../../constant/app_colors.dart';
-import '../bottom_screens/borrom_search_page.dart';
-import '../bottom_screens/home_page.dart';
-import '../bottom_screens/location_page.dart';
-import '../bottom_screens/profile_page.dart';
+import '../../../../constant/app_colors.dart';
+import '../../../widgets/app_button.dart';
+import '../../bottom_screens/borrom_search_page.dart';
+import '../../bottom_screens/home_page.dart';
+import '../../bottom_screens/location_page.dart';
+import '../../bottom_screens/profile_page.dart';
+import 'buying_place.dart';
+import 'menu_screen.dart';
+import 'reviews_screen.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key, required this.restnt});
@@ -22,7 +23,7 @@ class DetailScreen extends StatefulWidget {
   State<DetailScreen> createState() => _DetailScreenState();
 }
 
-class _DetailScreenState extends State<DetailScreen>{
+class _DetailScreenState extends State<DetailScreen> {
   final List _screens = [
     HomePage(),
     LocationPage(),
@@ -33,7 +34,6 @@ class _DetailScreenState extends State<DetailScreen>{
   int _selectedIndex = 0;
 
   TextStyle greyTextStyle = TextStyle(color: Colors.grey);
-
 
   @override
   Widget build(BuildContext context) {
@@ -217,9 +217,10 @@ class _DetailScreenState extends State<DetailScreen>{
               ),
               _restFacilities(),
               Padding(
-                  padding: EdgeInsets.only(bottom: 20,left: 40,right: 40),
+                  padding: EdgeInsets.only(bottom: 20, left: 40, right: 40),
                   child: buttonBuilder(
-                      () {},
+                      () =>
+                          navigate(context, BuyingPlace(restnt: widget.restnt)),
                       "JOYNI BUYURTMA QILISH",
                       AppColors.appColor,
                       TextStyle(color: Colors.white),
@@ -250,7 +251,10 @@ class _DetailScreenState extends State<DetailScreen>{
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Restoranlarning Qulayliklari",style: TextStyle(color: Colors.grey,fontSize: 18),),
+          Text(
+            "Restoranlarning Qulayliklari",
+            style: TextStyle(color: Colors.grey, fontSize: 18),
+          ),
           const Gap(10),
           SizedBox(
             height: 100,
@@ -258,11 +262,16 @@ class _DetailScreenState extends State<DetailScreen>{
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                _facilityBuilder('Alkagol','assets/img/google.png', Color(0xffd3fded)),
-                _facilityBuilder('Hookah', 'assets/img/google.png' , Colors.black26),
-                _facilityBuilder('Musiqa', 'assets/img/google.png' , Color(0xffd3fded)),
-                _facilityBuilder('Sigaret','assets/img/google.png', Color(0xffd3fded) ),
-                _facilityBuilder("O'yin",  'assets/img/google.png'  , Color(0xffd3fded)),
+                _facilityBuilder(
+                    'Alkagol', 'assets/img/google.png', Color(0xffd3fded)),
+                _facilityBuilder(
+                    'Hookah', 'assets/img/google.png', Colors.black26),
+                _facilityBuilder(
+                    'Musiqa', 'assets/img/google.png', Color(0xffd3fded)),
+                _facilityBuilder(
+                    'Sigaret', 'assets/img/google.png', Color(0xffd3fded)),
+                _facilityBuilder(
+                    "O'yin", 'assets/img/google.png', Color(0xffd3fded)),
               ],
             ),
           )
@@ -271,9 +280,9 @@ class _DetailScreenState extends State<DetailScreen>{
     );
   }
 
-  _facilityBuilder(String name, String imagePath,Color color) {
+  _facilityBuilder(String name, String imagePath, Color color) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: SizedBox(
         height: 100,
         width: 80,
@@ -285,15 +294,17 @@ class _DetailScreenState extends State<DetailScreen>{
               height: 60,
               width: 60,
               decoration: BoxDecoration(
-                color: color,
-                // color: Color(0xffd3fded),
+                  color: color,
+                  // color: Color(0xffd3fded),
                   borderRadius: BorderRadius.circular(35),
-                  image:
-                      DecorationImage(image: AssetImage(imagePath))),
+                  image: DecorationImage(image: AssetImage(imagePath))),
               child: null,
             ),
             const Gap(5),
-            Text(name,style: greyTextStyle,)
+            Text(
+              name,
+              style: greyTextStyle,
+            )
           ],
         ),
       ),

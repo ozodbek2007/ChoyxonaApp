@@ -2,10 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
+import 'package:untitled2/choyxona_app/constant/text_styles.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/single_screens/filter_screen.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/all_choyxona.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/all_data.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/all_resturant.page.dart';
-import 'package:untitled2/choyxona_app/presentation/widgets/drawer_app.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/app_bar_fc.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,16 +28,11 @@ class _HomePageState extends State<HomePage>
     super.initState();
   }
 
-
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
   }
-
-
-
-  String _district = "Andijan";
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +78,7 @@ class _HomePageState extends State<HomePage>
                           child: IconButton(
                               splashRadius: 50,
                               splashColor: Colors.red,
-                              onPressed: () =>showDrawer(),
+                              onPressed: () {},
                               icon: Icon(CupertinoIcons.list_bullet_indent))),
                     ),
                     const Gap(20),
@@ -90,8 +89,8 @@ class _HomePageState extends State<HomePage>
                         Image.asset(
                           "assets/img/choyxona_app1.png",
                           fit: BoxFit.cover,
-                          height: 16,
-                          width: 93,
+                          height: 15,
+                          width: 140,
                         ),
                         PopupMenuButton(
                           color: Colors.white,
@@ -138,9 +137,9 @@ class _HomePageState extends State<HomePage>
               TextField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    CupertinoIcons.search,
-                    color: Colors.grey,
+                  prefixIcon: IconButton(
+                    onPressed: () => navigate(context, FilterScreen()),
+                    icon: Icon(CupertinoIcons.search, color: Colors.grey),
                   ),
                   hintText: "Restuarant qidiring",
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
@@ -188,6 +187,7 @@ class _HomePageState extends State<HomePage>
       ),
     );
   }
+
   _tabBarBuilder(String imagePath, String title, Color color) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
@@ -212,7 +212,116 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  showDrawer(){
-    return DrawerApp();
+  String _district = "Andijon";
+
+  updateAppBar() {
+    return SizedBox(
+      height: 40,
+      width: 100,
+      child: Row(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: 60,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: 45,
+                  width: 45,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Color(0xffeaeef2)),
+                  child: Center(
+                      child: IconButton(
+                          splashRadius: 50,
+                          splashColor: Colors.red,
+                          onPressed: () {},
+                          icon: Icon(CupertinoIcons.list_bullet_indent))),
+                ),
+                const Gap(20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      "assets/img/choyxona_app1.png",
+                      fit: BoxFit.cover,
+                      height: 16,
+                      width: 93,
+                    ),
+                    PopupMenuButton(
+                      color: Colors.white,
+                      itemBuilder: (BuildContext context) {
+                        return <PopupMenuEntry<String>>[
+                          PopupMenuItem(
+                              textStyle: TextStyle(color: Colors.grey),
+                              value: "Andijon",
+                              child: Text("Andijon")),
+                          PopupMenuItem(
+                              textStyle: TextStyle(color: Colors.grey),
+                              value: "Toshkent",
+                              child: Text("Toshkent")),
+                          PopupMenuItem(
+                              textStyle: TextStyle(color: Colors.grey),
+                              value: "Farg'ona",
+                              child: Text("Farg'ona")),
+                        ];
+                      },
+                      onSelected: (String value) {
+                        setState(() {
+                          _district = value;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Text(
+                            _district,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          Icon(
+                            CupertinoIcons.arrowtriangle_down_fill,
+                            size: 13,
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          const Gap(15),
+          TextField(
+            cursorColor: Colors.black,
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                CupertinoIcons.search,
+                color: Colors.grey,
+              ),
+              hintText: "Restuarant qidiring",
+              hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+              filled: true,
+              fillColor: Color(0xfff4f4f4),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Color(0xfff4f4f4)),
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Color(0xfff4f4f4)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey.shade400),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
+
+
 }

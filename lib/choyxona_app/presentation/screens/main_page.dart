@@ -8,6 +8,7 @@ import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/profi
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
+
   @override
   State<MainPage> createState() => _MainPageState();
 }
