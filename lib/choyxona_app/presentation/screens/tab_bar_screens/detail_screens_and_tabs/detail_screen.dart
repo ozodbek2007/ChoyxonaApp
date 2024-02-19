@@ -66,7 +66,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       label: ''),
                   BottomNavigationBarItem(
                       backgroundColor: Colors.black,
-                      icon: Icon(CupertinoIcons.location_solid,
+                      icon: Icon(Icons.location_on_rounded,
                           color:
                               _selectedIndex == 1 ? Colors.white : Colors.grey),
                       label: ''),

@@ -24,6 +24,13 @@ class _FilterScreenState extends State<FilterScreen> {
         padding: const EdgeInsets.only(left: 20, right: 20, top: 150),
         child: Container(
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                spreadRadius: 4,
+                blurRadius: 4,
+                color: Colors.black26
+              )
+            ],
               color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(15)),
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 30),

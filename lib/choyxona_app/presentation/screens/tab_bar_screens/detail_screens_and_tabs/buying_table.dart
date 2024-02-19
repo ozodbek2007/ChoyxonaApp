@@ -59,7 +59,7 @@ class _BuyingTableState extends State<BuyingTable> {
                   label: ''),
               BottomNavigationBarItem(
                   backgroundColor: Colors.black,
-                  icon: Icon(CupertinoIcons.location_solid,color: _selectedIndex == 1 ? Colors.white : Colors.grey),
+                  icon: Icon(Icons.location_on_rounded,color: _selectedIndex == 1 ? Colors.white : Colors.grey),
                   label: ''),
               BottomNavigationBarItem(
                   backgroundColor: Colors.black,
