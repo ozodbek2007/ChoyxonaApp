@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/login_page.dart';
@@ -27,10 +28,10 @@ class _PasswordChangedPageState extends State<PasswordChangedPage> {
               alignment: Alignment.center,
               child: Lottie.asset("assets/anim/anim1.json",width: 300,height:300),
             ),
-            Align(alignment:Alignment.center,child: Text("Parol o'zgartirildi",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35),)),
+            Align(alignment:Alignment.center,child: Text("Parol o'zgartirildi",style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,fontSize: 35),)),
             Gap(10),
-            Align(alignment:Alignment.center,child: Text("Parolingiz muvaffaqiyatli",style: TextStyle(fontSize: 16,color: Colors.grey.shade500),)),
-            Align(alignment:Alignment.center,child: Text("o'zgartirild",style: TextStyle(fontSize: 16,color: Colors.grey.shade500),)),
+            Align(alignment:Alignment.center,child: Text("Parolingiz muvaffaqiyatli",style: GoogleFonts.nunitoSans(fontSize: 16,color: Colors.grey.shade500),)),
+            Align(alignment:Alignment.center,child: Text("o'zgartirild",style: GoogleFonts.nunitoSans(fontSize: 16,color: Colors.grey.shade500),)),
             Gap(30),
             SizedBox(
               width: double.infinity,
@@ -43,7 +44,7 @@ class _PasswordChangedPageState extends State<PasswordChangedPage> {
                   backgroundColor: const Color(0xff0bff99),
                 ),
                 onPressed: ()=>navigatePushRemove(context, LoginPage()),
-                child: const Text("Davom ettirish",style: TextStyle(color: Color(0xffffffff),fontWeight: FontWeight.bold,fontSize: 15),),
+                child:  Text("Davom ettirish",style: GoogleFonts.nunitoSans(color: Color(0xffffffff),fontWeight: FontWeight.bold,fontSize: 15),),
               ),
             ),
           ],

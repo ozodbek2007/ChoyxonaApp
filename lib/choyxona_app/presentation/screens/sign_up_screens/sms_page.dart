@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
@@ -45,7 +46,7 @@ class _SMSPageState extends State<SMSPage> {
                     style: TextStyles.titleTextStyle)),
             const Gap(10),
             Text(
-                "Telefoningizga faollashtirish kodi bilan SMS yubordik +998 97 977 97 77"),
+                "Telefoningizga faollashtirish kodi bilan SMS yubordik +998 97 977 97 77",style: GoogleFonts.nunitoSans(),),
             const Gap(15),
             _textFiledSection(),
             const Gap(100),
@@ -55,7 +56,7 @@ class _SMSPageState extends State<SMSPage> {
               children: [
                 Text("Kodni qayta yuboring   ",
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                    GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 15)),
                 Text("00:20", style: TextStyles.descTextStyle)
               ],
             ),
@@ -64,7 +65,7 @@ class _SMSPageState extends State<SMSPage> {
                 () => navigatePushRemove(context, SuccessPage()),
                 "Tasdiqlash",
                 AppColors.appColor,
-                TextStyle(
+                GoogleFonts.nunitoSans(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 15),

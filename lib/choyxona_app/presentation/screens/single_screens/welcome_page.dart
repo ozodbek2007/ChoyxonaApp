@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/login_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
@@ -34,15 +35,15 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Image.asset("assets/img/welcome.png",
                     fit: BoxFit.cover, width: 150, height: 150)),
             const Gap(95),
-            const Text("Ilova bilan tanishing",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+             Text("Ilova bilan tanishing",
+                style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 35)),
             const Gap(10),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 45),
+              padding: EdgeInsets.symmetric(horizontal: 30),
         
-              child: const Text(
+              child:  Text(
                   "Ilova bilan tanishingIlova bilan tanishing Ilova bilan tanishing",
-                  style: TextStyle(fontSize: 20)),
+                  style: GoogleFonts.nunitoSans(fontSize: 20)),
             ),
             const Gap(140),
             _loginAndRegisterButtons()
@@ -56,9 +57,9 @@ class _WelcomePageState extends State<WelcomePage> {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          buttonBuilder(() =>navigate(context, LoginPage()), "Tizmiga Kirish", AppColors.appColor, TextStyle(color: Colors.white,fontWeight: FontWeight.bold),AppColors.appColor),
+          buttonBuilder(() =>navigate(context, LoginPage()), "Tizmiga Kirish", AppColors.appColor, GoogleFonts.nunitoSans(color: Colors.white,fontWeight: FontWeight.bold),AppColors.appColor),
           const Gap(20),
-          buttonBuilder(() =>navigate(context, RegisterPage()), "Ro'yhatdan O'tish", Colors.white, TextStyle(color: Colors.black,fontWeight: FontWeight.bold),Colors.black),
+          buttonBuilder(() =>navigate(context, RegisterPage()), "Ro'yhatdan O'tish", Colors.white, GoogleFonts.nunitoSans(color: Colors.black,fontWeight: FontWeight.bold),Colors.black),
           const Gap(15),
         ],
       ),

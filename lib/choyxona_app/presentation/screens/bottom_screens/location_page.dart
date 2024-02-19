@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
@@ -12,7 +13,7 @@ class _LocationPageState extends State<LocationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Center(
-        child: Text("Location"),
+        child: Text("Location",style: GoogleFonts.nunitoSans(),),
       ),
     );
   }

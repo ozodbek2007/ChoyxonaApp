@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/return_password.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
@@ -41,14 +42,14 @@ class _CheckSmsState extends State<CheckSms> {
             Center(
                 child: Text(
               "Iltimos,SMS ni tekshiring",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+              style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 35),
             )),
             const Gap(10),
             Row(
               children: [
                 Text(
                   "+998 93 *** *** 54",
-                  style: TextStyle(
+                  style: GoogleFonts.nunitoSans(
                       fontWeight: FontWeight.bold, color: Colors.black),
                 ),
                 Gap(5),
@@ -69,9 +70,9 @@ class _CheckSmsState extends State<CheckSms> {
                   backgroundColor: const Color(0xff0bff99),
                 ),
                 onPressed: () =>navigatePushRemove(context, ReturnPassword()),
-                child: const Text(
+                child:  Text(
                   "Tasdiqlash",
-                  style: TextStyle(
+                  style: GoogleFonts.nunitoSans(
                       color: Color(0xffffffff),
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
@@ -87,7 +88,7 @@ class _CheckSmsState extends State<CheckSms> {
                     onPressed: () {},
                     child: Text(
                       "Kodni qayta yuboring",
-                      style: TextStyle(color: Colors.black),
+                      style: GoogleFonts.nunitoSans(color: Colors.black),
                     )),
                 Text(
                   "00:20",

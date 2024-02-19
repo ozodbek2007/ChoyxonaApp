@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/congrast_bought_table.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
@@ -10,7 +11,7 @@ import '../../../../exe_model/rest.dart';
 import '../../bottom_screens/borrom_search_page.dart';
 import '../../bottom_screens/home_page.dart';
 import '../../bottom_screens/location_page.dart';
-import '../../bottom_screens/profile_page.dart';
+import '../../bottom_screens/profile/profile_page.dart';
 
 class BoughtTable extends StatefulWidget {
   const BoughtTable({super.key, required this.restnt});
@@ -89,7 +90,7 @@ class _BoughtTableState extends State<BoughtTable> {
           updateAppBar(),
           const Gap(20),
           Text("${widget.restnt.name} Joy band qilish",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+              style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 25)),
           const Gap(60),
           _getRestTable()
         ],
@@ -126,7 +127,7 @@ class _BoughtTableState extends State<BoughtTable> {
           right: 40,
           left: 40,
         ),
-        child: buttonBuilder(() =>navigatePushRemove(context, CongratsPlace(restnt: widget.restnt)), "TASDIQLASH", AppColors.appColor, TextStyle(fontWeight: FontWeight.bold), AppColors.appColor),
+        child: buttonBuilder(() =>navigatePushRemove(context, CongratsPlace(restnt: widget.restnt)), "TASDIQLASH", AppColors.appColor, GoogleFonts.nunitoSans(fontWeight: FontWeight.bold), AppColors.appColor),
         )
       ],
     );
@@ -139,8 +140,8 @@ class _BoughtTableState extends State<BoughtTable> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(restName, style: TextStyle(fontWeight: FontWeight.bold)),
-          Text(restData, style: TextStyle(fontWeight: FontWeight.bold))
+          Text(restName, style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold)),
+          Text(restData, style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold))
         ],
       ),
     );
@@ -190,17 +191,17 @@ class _BoughtTableState extends State<BoughtTable> {
                       itemBuilder: (BuildContext context) {
                         return <PopupMenuEntry<String>>[
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Andijon",
-                              child: Text("Andijon")),
+                              child: Text("Andijon",style: GoogleFonts.nunitoSans(),)),
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Toshkent",
-                              child: Text("Toshkent")),
+                              child: Text("Toshkent",style: GoogleFonts.nunitoSans(),)),
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Farg'ona",
-                              child: Text("Farg'ona")),
+                              child: Text("Farg'ona",style: GoogleFonts.nunitoSans(),)),
                         ];
                       },
                       onSelected: (String value) {
@@ -212,7 +213,7 @@ class _BoughtTableState extends State<BoughtTable> {
                         children: [
                           Text(
                             _district,
-                            style: TextStyle(color: Colors.grey),
+                            style: GoogleFonts.nunitoSans(color: Colors.grey),
                           ),
                           Icon(
                             CupertinoIcons.arrowtriangle_down_fill,

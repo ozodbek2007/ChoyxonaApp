@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/login_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
@@ -21,9 +22,9 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _name = TextEditingController();
   TextEditingController _password = TextEditingController();
 
-  TextStyle _style = TextStyle(fontWeight: FontWeight.bold);
+  TextStyle _style = GoogleFonts.nunitoSans(fontWeight: FontWeight.bold);
 
-  bool _isVisible = true;
+  bool _isVisible = false;
 
   bool _iconTapped = true;
 
@@ -52,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const Gap(60),
               Text("Salom, Xush Kelibsiz!👋",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                  style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 30)),
               const Gap(40),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -86,8 +87,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       IconButton(
                         icon: Icon(
                           _isVisible
-                              ? CupertinoIcons.eye
-                              : CupertinoIcons.eye_slash,
+                              ? CupertinoIcons.eye_slash
+                              : CupertinoIcons.eye,
                           size: 20,
                         ),
                         onPressed: () {
@@ -140,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: null,
                   ),
                   Text("    Yoki bilan    ",
-                      style: TextStyle(color: Colors.grey)),
+                      style: GoogleFonts.nunitoSans(color: Colors.grey)),
                   Container(
                     color: Colors.grey,
                     height: 1,
@@ -156,7 +157,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Hisobingiz bormi?  "),
+                  Text("Hisobingiz bormi?  ",style: GoogleFonts.nunitoSans()),
                   InkWell(
                       onTap: () =>navigate(context, LoginPage()),
                       child: Text("Tizmiga kiring", style: _style)),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -10,7 +11,7 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  TextStyle boldStyle = TextStyle(fontWeight: FontWeight.bold,fontSize: 13);
+  TextStyle boldStyle = GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,fontSize: 13);
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class _MenuScreenState extends State<MenuScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Hammasi",style: TextStyle(color:Color(0xff0084fd))),
+              Text("Hammasi",style: GoogleFonts.nunitoSans(color:Color(0xff0084fd))),
               Icon(CupertinoIcons.forward,size: 20,color: Color(0xff0084fd),)
             ],
           ),
@@ -96,7 +97,7 @@ class _MenuScreenState extends State<MenuScreen> {
               borderRadius: BorderRadius.circular(10)),
           child: null,
         ),
-        Text("  ${title}", style: TextStyle(fontSize: 10,color: color))
+        Text("  ${title}", style: GoogleFonts.nunitoSans(fontSize: 10,color: color))
       ],
     );
   }

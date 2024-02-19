@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
@@ -32,7 +33,7 @@ class CongratsPlace extends StatelessWidget {
           const Gap(10),
           Text("Sizning joyingiz bron qilindi!",style: TextStyles.descTextStyle),
           const Gap(50),
-          buttonBuilder(() =>navigatePushRemove(context, MainPage()), "BAJARILDI", AppColors.appColor, TextStyle(color: Colors.white), AppColors.appColor)
+          buttonBuilder(() =>navigatePushRemove(context, MainPage()), "BAJARILDI", AppColors.appColor, GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,color: Colors.white), AppColors.appColor)
         ],
       ),
     );

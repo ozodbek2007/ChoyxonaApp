@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BottomSearchScreen extends StatefulWidget {
   const BottomSearchScreen({super.key});
@@ -12,7 +13,7 @@ class _LocationPageState extends State<BottomSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Center(
-        child: Text("Bottom search"),
+        child: Text("Bottom search",style: GoogleFonts.nunitoSans(),),
       ),
     );
   }

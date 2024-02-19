@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_in_screens/password_change.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
@@ -29,16 +30,16 @@ class _ReturnPasswordState extends State<ReturnPassword> {
             const Gap(60),
             // leadingIcon(context),
             const Gap(20),
-            Align(alignment:Alignment.topLeft,child: Text("Parolni tiklash",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35),)),
+            Align(alignment:Alignment.topLeft,child: Text("Parolni tiklash",style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,fontSize: 35),)),
             Gap(8),
             Align(
               alignment: Alignment.topLeft,
-              child: Text("Iltimos, eslab qoladigan biror narsani yozing",style: TextStyle(color: Colors.grey.shade500,fontSize: 16),),
+              child: Text("Iltimos, eslab qoladigan biror narsani yozing",style: GoogleFonts.nunitoSans(color: Colors.grey.shade500,fontSize: 16),),
             ),
             const Gap(30),
-            const Align(
+             Align(
                 alignment: Alignment.topLeft,
-                child: Text("New Password",style: TextStyle(fontSize: 14,color: Color(0xff000000)),)),
+                child: Text("New Password",style: GoogleFonts.nunitoSans(fontSize: 14,color: Color(0xff000000)),)),
             Gap(6),
             TextField(
               obscureText: _isOpenn,
@@ -46,7 +47,6 @@ class _ReturnPasswordState extends State<ReturnPassword> {
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
-
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(
@@ -68,7 +68,7 @@ class _ReturnPasswordState extends State<ReturnPassword> {
                     color: Colors.grey,
                   ),
                 ),
-                hintText: "8 ta belgidan iborat bo'lishi kerak",hintStyle: TextStyle(color: Colors.grey.shade500),
+                hintText: "8 ta belgidan iborat bo'lishi kerak",hintStyle: GoogleFonts.nunitoSans(color: Colors.grey.shade500),
                 suffixIcon: IconButton(
                   onPressed: (){
                     setState(() {
@@ -79,9 +79,9 @@ class _ReturnPasswordState extends State<ReturnPassword> {
               ),
             ),
             Gap(15),
-            const Align(
+             Align(
                 alignment: Alignment.topLeft,
-                child: Text("Confirm new Password",style: TextStyle(fontSize: 14,color: Color(0xff000000)),)),
+                child: Text("Confirm new Password",style: GoogleFonts.nunitoSans(fontSize: 14,color: Color(0xff000000)),)),
             Gap(6),
             TextField(
               obscureText: _isOpenned,
@@ -110,7 +110,7 @@ class _ReturnPasswordState extends State<ReturnPassword> {
                     color: Colors.grey,
                   ),
                 ),
-                hintText: "Parolni qayta kiriting",hintStyle: TextStyle(color: Colors.grey.shade500),
+                hintText: "Parolni qayta kiriting",hintStyle: GoogleFonts.nunitoSans(color: Colors.grey.shade500),
                 suffixIcon: IconButton(
                   onPressed: (){
                     setState(() {
@@ -134,7 +134,7 @@ class _ReturnPasswordState extends State<ReturnPassword> {
                 onPressed: (){
                   navigatePushRemove(context, PasswordChangedPage());
                 },
-                child: const Text("Tasdiqlash",style: TextStyle(color: Color(0xffffffff),fontWeight: FontWeight.bold,fontSize: 15),),
+                child:  Text("Tasdiqlash",style: GoogleFonts.nunitoSans(color: Color(0xffffffff),fontWeight: FontWeight.bold,fontSize: 15),),
               ),
             ),
           ],

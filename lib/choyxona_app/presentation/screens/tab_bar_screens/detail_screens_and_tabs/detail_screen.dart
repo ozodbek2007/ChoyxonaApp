@@ -9,7 +9,7 @@ import '../../../widgets/app_button.dart';
 import '../../bottom_screens/borrom_search_page.dart';
 import '../../bottom_screens/home_page.dart';
 import '../../bottom_screens/location_page.dart';
-import '../../bottom_screens/profile_page.dart';
+import '../../bottom_screens/profile/profile_page.dart';
 import 'buying_place.dart';
 import 'menu_screen.dart';
 import 'reviews_screen.dart';
@@ -33,7 +33,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   int _selectedIndex = 0;
 
-  TextStyle greyTextStyle = TextStyle(color: Colors.grey);
+  TextStyle greyTextStyle = GoogleFonts.nunitoSans(color: Colors.grey);
 
   @override
   Widget build(BuildContext context) {
@@ -148,14 +148,14 @@ class _DetailScreenState extends State<DetailScreen> {
                   children: [
                     Icon(CupertinoIcons.star_fill, color: AppColors.appColor),
                     Text("  ${widget.restnt.rating}k",
-                        style: GoogleFonts.rowdies(
+                        style: GoogleFonts.nunitoSans(
                             fontSize: 15, fontWeight: FontWeight.bold)),
                   ],
                 ),
                 const Gap(10),
                 Text(
                   widget.restnt.name ?? "",
-                  style: GoogleFonts.rowdies(fontSize: 24),
+                  style: GoogleFonts.nunitoSans(fontSize: 24),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -165,20 +165,20 @@ class _DetailScreenState extends State<DetailScreen> {
                         color: AppColors.appColor),
                     const Gap(10),
                     Text(widget.restnt.location ?? "",
-                        style: GoogleFonts.roboto(
+                        style: GoogleFonts.nunitoSans(
                             fontWeight: FontWeight.bold, fontSize: 10))
                   ],
                 ),
                 const Gap(20),
                 Text(widget.restnt.desc ?? "",
                     style:
-                        GoogleFonts.roboto(fontSize: 12, color: Colors.grey)),
+                    GoogleFonts.nunitoSans(fontSize: 12, color: Colors.grey)),
                 const Gap(30),
                 Text("+${widget.restnt.managerNum} - Manager Nomeri",
-                    style: GoogleFonts.roboto(color: Colors.grey)),
+                    style: GoogleFonts.nunitoSans(color: Colors.grey)),
                 const Gap(10),
                 Text("+${widget.restnt.restNum} - Restaurant Nomeri",
-                    style: GoogleFonts.roboto(color: Colors.grey)),
+                    style: GoogleFonts.nunitoSans(color: Colors.grey)),
               ],
             ),
           ),
@@ -223,7 +223,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           navigate(context, BuyingPlace(restnt: widget.restnt)),
                       "JOYNI BUYURTMA QILISH",
                       AppColors.appColor,
-                      TextStyle(color: Colors.white),
+                      GoogleFonts.nunitoSans(color: Colors.white,fontWeight: FontWeight.bold),
                       AppColors.appColor))
             ],
           )
@@ -240,7 +240,7 @@ class _DetailScreenState extends State<DetailScreen> {
             color: Color(0xffd3fded), borderRadius: BorderRadius.circular(12)),
         child: Center(
             child: Text(name,
-                style: TextStyle(
+                style: GoogleFonts.nunitoSans(
                     color: AppColors.appColor, fontWeight: FontWeight.bold))));
   }
 
@@ -253,7 +253,7 @@ class _DetailScreenState extends State<DetailScreen> {
         children: [
           Text(
             "Restoranlarning Qulayliklari",
-            style: TextStyle(color: Colors.grey, fontSize: 18),
+            style: GoogleFonts.nunitoSans(color: Colors.grey, fontSize: 18),
           ),
           const Gap(10),
           SizedBox(

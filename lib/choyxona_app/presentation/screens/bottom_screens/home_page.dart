@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/single_screens/filter_screen.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/all_choyxona.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/all_data.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/all_resturant.page.dart';
-import 'package:untitled2/choyxona_app/presentation/widgets/app_bar_fc.dart';
+
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
@@ -97,15 +98,15 @@ class _HomePageState extends State<HomePage>
                           itemBuilder: (BuildContext context) {
                             return <PopupMenuEntry<String>>[
                               PopupMenuItem(
-                                  textStyle: TextStyle(color: Colors.grey),
+                                  textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                                   value: "Andijon",
                                   child: Text("Andijon")),
                               PopupMenuItem(
-                                  textStyle: TextStyle(color: Colors.grey),
+                                  textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                                   value: "Toshkent",
                                   child: Text("Toshkent")),
                               PopupMenuItem(
-                                  textStyle: TextStyle(color: Colors.grey),
+                                  textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                                   value: "Farg'ona",
                                   child: Text("Farg'ona")),
                             ];
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage>
                             children: [
                               Text(
                                 _district,
-                                style: TextStyle(color: Colors.grey),
+                                style: GoogleFonts.nunitoSans(color: Colors.grey),
                               ),
                               Icon(
                                 CupertinoIcons.arrowtriangle_down_fill,
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage>
                     icon: Icon(CupertinoIcons.search, color: Colors.grey),
                   ),
                   hintText: "Restuarant qidiring",
-                  hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+                  hintStyle: GoogleFonts.nunitoSans(color: Colors.grey, fontSize: 13),
                   filled: true,
                   fillColor: Color(0xfff4f4f4),
                   enabledBorder: OutlineInputBorder(
@@ -205,8 +206,8 @@ class _HomePageState extends State<HomePage>
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(imagePath, style: TextStyle(fontSize: 20)),
-          Text(title, style: TextStyle(fontSize: 8))
+          Text(imagePath, style: GoogleFonts.nunitoSans(fontSize: 20)),
+          Text(title, style: GoogleFonts.nunitoSans(fontSize: 8))
         ],
       ),
     );
@@ -256,15 +257,15 @@ class _HomePageState extends State<HomePage>
                       itemBuilder: (BuildContext context) {
                         return <PopupMenuEntry<String>>[
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Andijon",
                               child: Text("Andijon")),
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Toshkent",
                               child: Text("Toshkent")),
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Farg'ona",
                               child: Text("Farg'ona")),
                         ];
@@ -278,7 +279,7 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Text(
                             _district,
-                            style: TextStyle(color: Colors.grey),
+                            style: GoogleFonts.nunitoSans(color: Colors.grey),
                           ),
                           Icon(
                             CupertinoIcons.arrowtriangle_down_fill,
@@ -301,7 +302,7 @@ class _HomePageState extends State<HomePage>
                 color: Colors.grey,
               ),
               hintText: "Restuarant qidiring",
-              hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+              hintStyle: GoogleFonts.nunitoSans(color: Colors.grey, fontSize: 13),
               filled: true,
               fillColor: Color(0xfff4f4f4),
               enabledBorder: OutlineInputBorder(

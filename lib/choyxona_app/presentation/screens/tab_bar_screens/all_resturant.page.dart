@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AllRestaurant extends StatefulWidget {
   const AllRestaurant({super.key});
@@ -12,7 +13,7 @@ class _AllRestaurantState extends State<AllRestaurant> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("All Restaurant"),
+        child: Text("All Restaurant",style: GoogleFonts.nunitoSans(),),
       ),
     );
   }

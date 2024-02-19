@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
@@ -51,19 +52,19 @@ class _LoginPageState extends State<LoginPage> {
                 child: Center(child: Icon(Icons.arrow_back_ios,size: 20,)),
               )),
             const Gap(20),
-            const Align(
+             Align(
               alignment: Alignment.topLeft,
               child: Text(
                 "Log in",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: GoogleFonts.nunitoSans(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
             const Gap(25),
-            const Align(
+             Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   "Phone Number",
-                  style: TextStyle(fontSize: 14, color: Color(0xff000000)),
+                  style: GoogleFonts.nunitoSans(fontSize: 14, color: Color(0xff000000)),
                 )),
             const Gap(5),
             TextField(
@@ -107,15 +108,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const Gap(18),
-            const Align(
+             Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   "Password",
-                  style: TextStyle(fontSize: 14, color: Color(0xff000000)),
+                  style: GoogleFonts.nunitoSans(fontSize: 14, color: Color(0xff000000)),
                 )),
             const Gap(5),
             TextField(
-              obscureText: _isOpen,
+              obscureText:!_isOpen,
               // obscuringCharacter: "*",
               controller: _passwordController,
               decoration: InputDecoration(
@@ -149,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                       _isOpen = !_isOpen;
                     });
                   },
-                  icon: Icon(!_isOpen
+                  icon: Icon(_isOpen
                       ? Icons.remove_red_eye_outlined
                       : Icons.visibility_off_outlined),
                 ),
@@ -163,9 +164,9 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.of(context).push(CupertinoPageRoute(
                         builder: (context) => const ForgotPassword()));
                   },
-                  child: const Text(
+                  child:  Text(
                     "Forgot password?",
-                    style: TextStyle(
+                    style: GoogleFonts.nunitoSans(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                 )),
@@ -181,9 +182,9 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: const Color(0xff0bff99),
                 ),
                 onPressed: () => navigatePushRemove(context, MainPage()),
-                child: const Text(
+                child:  Text(
                   "Tizimga kirish",
-                  style: TextStyle(
+                  style: GoogleFonts.nunitoSans(
                       color: Color(0xffffffff),
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
@@ -191,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const Gap(30),
-            const Row(
+             Row(
               children: [
                 SizedBox(
                   width: 122,
@@ -204,7 +205,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   width: 104,
                   height: 18,
-                  child: Text("Yoki bilan kiring"),
+                  child: Text("Yoki bilan kiring",style: GoogleFonts.nunitoSans(),),
                 ),
                 Gap(12),
                 SizedBox(
@@ -293,15 +294,15 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Don't have an account?"),
+                 Text("Don't have an account?",style: GoogleFonts.nunitoSans(),),
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(CupertinoPageRoute(
                           builder: (context) => RegisterPage()));
                     },
-                    child: const Text(
+                    child:  Text(
                       "Sign up",
-                      style: TextStyle(
+                      style: GoogleFonts.nunitoSans(
                           fontWeight: FontWeight.bold, color: Colors.black),
                     ))
               ],

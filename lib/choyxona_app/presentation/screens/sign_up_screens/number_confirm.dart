@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
@@ -84,7 +85,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
             ),
             Divider(),
             const Gap(50),
-            buttonBuilder(()=>navigate(context, SMSPage()), "Davom Etish", AppColors.appColor, TextStyle(color: Colors.white,fontWeight: FontWeight.bold), AppColors.appColor)
+            buttonBuilder(()=>navigate(context, SMSPage()), "Davom Etish", AppColors.appColor, GoogleFonts.nunitoSans(color: Colors.white,fontWeight: FontWeight.bold), AppColors.appColor)
           ],
         ),
       ),
@@ -111,7 +112,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
               ),
               actions: [
                 TextButton(
-                    onPressed: () => navigatePop(context), child: Text("OK"))
+                    onPressed: () => navigatePop(context), child: Text("OK",style: GoogleFonts.nunitoSans(),))
               ],
             ));
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'check_sms.dart';
@@ -34,7 +35,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 alignment: Alignment.center,
                 child: Text(
                   "Parolni unutdingizmi?",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                  style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 35),
                 )),
             Align(
               alignment: Alignment.center,
@@ -42,7 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 width: 346,
                 height: 40,
                 child: Text(
-                    "Xavotir olmang! Bo'lib turadi. Hisobingiz bilan bog'langan telefon raqamingizni kiriting."),
+                    "Xavotir olmang! Bo'lib turadi. Hisobingiz bilan bog'langan telefon raqamingizni kiriting.",style: GoogleFonts.nunitoSans(),),
               ),
             ),
             Gap(30),
@@ -53,7 +54,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 height: 18,
                 child: Text(
                   "Telefon raqami",
-                  style: TextStyle(
+                  style: GoogleFonts.nunitoSans(
                     fontSize: 14,
                     color: Color(0xff000000),
                   ),
@@ -90,7 +91,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
                 hintText: "Telefon raqmingizni kiriting",
-                hintStyle: TextStyle(color: Colors.grey.shade500),
+                hintStyle: GoogleFonts.nunitoSans(color: Colors.grey.shade500),
               ),
             ),
             const Gap(50),
@@ -108,9 +109,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   Navigator.of(context).push(CupertinoPageRoute(
                       builder: (context) => const CheckSms()));
                 },
-                child: const Text(
+                child:  Text(
                   "Kodni yuboring",
-                  style: TextStyle(
+                  style: GoogleFonts.nunitoSans(
                       color: Color(0xffffffff),
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
@@ -126,9 +127,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text(
+                    child:  Text(
                       "Tizimga kirish",
-                      style: TextStyle(
+                      style: GoogleFonts.nunitoSans(
                           fontWeight: FontWeight.bold, color: Colors.black),
                     ))
               ],

@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/exe_model/rest.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/buying_table.dart';
-import 'package:untitled2/choyxona_app/presentation/widgets/app_bar_fc.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 import '../../bottom_screens/borrom_search_page.dart';
 import '../../bottom_screens/home_page.dart';
 import '../../bottom_screens/location_page.dart';
-import '../../bottom_screens/profile_page.dart';
+import '../../bottom_screens/profile/profile_page.dart';
 
 class BuyingPlace extends StatefulWidget {
   const BuyingPlace({super.key, required this.restnt});
@@ -90,7 +90,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
 
   _getBuyingTime() {
     return SingleChildScrollView(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(19),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,14 +98,14 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           const Gap(40),
           updateAppBar(),
           const Gap(20),
-          Text("${widget.restnt.name} Joy band qilish", style: TextStyle(fontWeight: FontWeight.bold,
+          Text("${widget.restnt.name} Joy band qilish", style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,
           fontSize: 25)),
           const Gap(40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Brom qilish sanasini tanlang"),
+              Text("Brom qilish sanasini tanlang",style: GoogleFonts.nunitoSans(),),
               SizedBox(
                 height: 30,
                 width: 100,
@@ -113,8 +113,8 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("2-7 yanvar"),
-                    Icon(CupertinoIcons.forward_end_fill)
+                    Text("2-7 yanvar",style: GoogleFonts.nunitoSans(),),
+                    Icon(Icons.skip_next_rounded,size: 20,)
                   ],
                 ),
               )
@@ -123,11 +123,11 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           // const Gap(10),
           _getTheDate(),
           const Gap(25),
-          Text("Brom qilish vaqtini tanlang"),
+          Text("Brom qilish vaqtini tanlang",style: GoogleFonts.nunitoSans(),),
           // const Gap(10),
           _getTimeToBuy(),
           const Gap(25),
-          Text("Odamlar sonini tanlang"),
+          Text("Odamlar sonini tanlang",style: GoogleFonts.nunitoSans(),),
           // const Gap(10),
           _getNumberPeople(),
           Padding(
@@ -138,7 +138,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
               right: 40,
             ),
             child: buttonBuilder(() =>navigate(context, BuyingTable(restnt: widget.restnt)), "KEYINGISI", AppColors.appColor,
-                TextStyle(color: Colors.white), AppColors.appColor),
+                GoogleFonts.nunitoSans(color: Colors.white,fontWeight: FontWeight.bold), AppColors.appColor),
           )
         ],
       ),
@@ -189,17 +189,17 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                       itemBuilder: (BuildContext context) {
                         return <PopupMenuEntry<String>>[
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Andijon",
-                              child: Text("Andijon")),
+                              child: Text("Andijon",style: GoogleFonts.nunitoSans(),)),
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Toshkent",
-                              child: Text("Toshkent")),
+                              child: Text("Toshkent",style: GoogleFonts.nunitoSans(),)),
                           PopupMenuItem(
-                              textStyle: TextStyle(color: Colors.grey),
+                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Farg'ona",
-                              child: Text("Farg'ona")),
+                              child: Text("Farg'ona",style: GoogleFonts.nunitoSans(),)),
                         ];
                       },
                       onSelected: (String value) {
@@ -211,7 +211,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                         children: [
                           Text(
                             _district,
-                            style: TextStyle(color: Colors.grey),
+                            style: GoogleFonts.nunitoSans(color: Colors.grey),
                           ),
                           Icon(
                             CupertinoIcons.arrowtriangle_down_fill,
@@ -265,7 +265,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                       ]),
                   child: Center(
                     child: Text("${data.date}",
-                        style: TextStyle(
+                        style: GoogleFonts.nunitoSans(
                             color: data.isTrue ? Colors.black : Colors.white,
                             fontSize: 25,
                             fontWeight: FontWeight.bold)),
@@ -312,7 +312,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                     ]),
                 child: Center(
                   child: Text("${time.hour}:${time.minute}",
-                      style: TextStyle(
+                      style: GoogleFonts.nunitoSans(
                           color: time.isTrue ? Colors.black : Colors.white,
                           fontSize: 25,
                           fontWeight: FontWeight.bold)),
@@ -360,7 +360,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                       ]),
                   child: Center(
                     child: Text("${data.pNum}",
-                        style: TextStyle(
+                        style: GoogleFonts.nunitoSans(
                             color: data.isTrue! ? Colors.black : Colors.white,
                             fontSize: 25,
                             fontWeight: FontWeight.bold)),

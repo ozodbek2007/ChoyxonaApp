@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField(this.hintText, this.isVisible, this.controller, this.myIcon);
@@ -11,9 +12,12 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: Colors.grey,
+      cursorHeight: 25,
       controller: controller,
       obscureText: isVisible,
       decoration: InputDecoration(
+        suffixIconColor: Colors.grey,
         suffixIcon: myIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -39,7 +43,7 @@ class AppTextField extends StatelessWidget {
         fillColor: Colors.white,
         filled: true,
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.grey),
+        hintStyle: GoogleFonts.nunitoSans(fontSize: 16,color: Colors.grey),
       ),
     );
   }

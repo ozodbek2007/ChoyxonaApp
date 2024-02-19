@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/borrom_search_page.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/home_page.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/location_page.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/profile_page.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/profile/profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

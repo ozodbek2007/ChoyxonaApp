@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 
 class ReviewsScreen extends StatefulWidget {
@@ -41,7 +42,7 @@ class _MenuScreenState extends State<ReviewsScreen> {
                       const Gap(10),
                       _getTheUser(),
                       Text("Comment, I love this UI very much",
-                          style: TextStyle(color: AppColors.appColor))
+                          style: GoogleFonts.nunitoSans(color: AppColors.appColor))
                     ],
                   ),
                 ),
@@ -56,7 +57,7 @@ class _MenuScreenState extends State<ReviewsScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Hammasi", style: TextStyle(color: Color(0xff0084fd))),
+              Text("Hammasi", style: GoogleFonts.nunitoSans(color: Color(0xff0084fd))),
               Icon(
                 CupertinoIcons.forward,
                 size: 20,
@@ -86,8 +87,8 @@ class _MenuScreenState extends State<ReviewsScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("@LouiseGreyrat", style: TextStyle(color: AppColors.appColor)),
-            Text("1 day ago", style: TextStyle(color: Colors.grey.shade400)),
+            Text("@LouiseGreyrat", style: GoogleFonts.nunitoSans(color: AppColors.appColor)),
+            Text("1 day ago", style: GoogleFonts.nunitoSans(color: Colors.grey.shade400)),
           ],
         ),
         const Gap(50),

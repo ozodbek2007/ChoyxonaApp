@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../constant/app_colors.dart';
 import '../../../constant/text_styles.dart';
@@ -36,7 +37,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text("Qidiruvingizni filtrlang",
-                        style: TextStyle(fontSize: 18)),
+                        style: GoogleFonts.nunitoSans(fontSize: 18)),
                     InkWell(
                       onTap: () => navigatePop(context),
                       child: Container(
@@ -67,7 +68,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       () => navigatePop(context),
                       "FILTER",
                       AppColors.appColor,
-                      TextStyle(
+                      GoogleFonts.nunitoSans(
                           color: Colors.white, fontWeight: FontWeight.bold),
                       AppColors.appColor),
                 )
@@ -131,7 +132,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey.shade400),
                     borderRadius: BorderRadius.circular(35)),
-                child: Center(child: Text("${'\$' * numix}")),
+                child: Center(child: Text("${'\$' * numix}",style: GoogleFonts.nunitoSans(),)),
               ),
             ),
           );
@@ -167,7 +168,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: Colors.grey.shade400)),
                   child: Center(
-                    child: Text(data,style: TextStyle(color: Colors.grey.shade800,fontSize: 15)),
+                    child: Text(data,style: GoogleFonts.nunitoSans(color: Colors.grey.shade800,fontSize: 15)),
                   ),
                 ),
               ),

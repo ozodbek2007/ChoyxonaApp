@@ -44,14 +44,14 @@ class _AllDataState extends State<AllData> {
                   ),
                 ),
                 const Gap(15),
-                Text(data.name ?? "",style: GoogleFonts.roboto(fontSize: 20),),
+                Text(data.name ?? "",style: GoogleFonts.nunitoSans(fontSize: 20),),
                 const Gap(15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(CupertinoIcons.star,color: AppColors.appColor),
-                    Text("  ${data.rating}",style: GoogleFonts.rowdies(fontSize: 18,fontWeight: FontWeight.bold)),
+                    Text("  ${data.rating}",style: GoogleFonts.nunitoSans(fontSize: 18,fontWeight: FontWeight.bold)),
                   ],
                 )
               ],
