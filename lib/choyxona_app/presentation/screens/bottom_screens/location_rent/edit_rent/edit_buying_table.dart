@@ -3,29 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/congrast_bought_table.dart';
+import 'package:untitled2/choyxona_app/exe_model/rest.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/location_rent/edit_rent/editted_bought_table.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/buoght_table.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
-import '../../../../exe_model/rest.dart';
-import '../../bottom_screens/borrom_search_page.dart';
-import '../../bottom_screens/home_page.dart';
-import '../../bottom_screens/location_rent/location_page.dart';
-import '../../bottom_screens/profile/profile_page.dart';
+import '../../borrom_search_page.dart';
+import '../../home_page.dart';
+import '../../profile/profile_page.dart';
+import '../location_page.dart';
 
-class BoughtTable extends StatefulWidget {
-  const BoughtTable({super.key, required this.restnt});
+class EditBuyingTable extends StatefulWidget {
+  const EditBuyingTable({super.key, required this.restnt});
 
   final Restnt restnt;
 
   @override
-  State<BoughtTable> createState() => _BoughtTableState();
+  State<EditBuyingTable> createState() => _BuyingTableState();
 }
 
-class _BoughtTableState extends State<BoughtTable> {
+class _BuyingTableState extends State<EditBuyingTable> {
   int _selectedIndex = 0;
-
-  final _gap = Gap(10);
 
   final List _screens = [
     HomePage(),
@@ -37,10 +36,9 @@ class _BoughtTableState extends State<BoughtTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: _selectedIndex == 0 ? _boughtTable() : _screens[_selectedIndex],
+      body: _selectedIndex == 0 ? _getBuyingTable() : _screens[_selectedIndex],
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 10, left: 15, right: 15),
+        padding: EdgeInsets.all(20),
         child: SizedBox(
           height: 80,
           child: ClipRRect(
@@ -56,20 +54,28 @@ class _BoughtTableState extends State<BoughtTable> {
                     backgroundColor: Colors.black,
                     icon: Padding(
                       padding: const EdgeInsets.only(top: 18),
-                      child: Icon(CupertinoIcons.home,color: _selectedIndex == 0 ? Colors.white : Colors.grey),
+                      child: Icon(CupertinoIcons.home,
+                          color:
+                              _selectedIndex == 0 ? Colors.white : Colors.grey),
                     ),
                     label: ''),
                 BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(Icons.location_on_rounded,color: _selectedIndex == 1 ? Colors.white : Colors.grey),
+                    icon: Icon(Icons.location_on_rounded,
+                        color:
+                            _selectedIndex == 1 ? Colors.white : Colors.grey),
                     label: ''),
                 BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(CupertinoIcons.search,color: _selectedIndex == 2 ? Colors.white : Colors.grey),
+                    icon: Icon(CupertinoIcons.search,
+                        color:
+                            _selectedIndex == 2 ? Colors.white : Colors.grey),
                     label: ''),
                 BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(CupertinoIcons.person,color: _selectedIndex == 3 ? Colors.white : Colors.grey),
+                    icon: Icon(CupertinoIcons.person,
+                        color:
+                            _selectedIndex == 3 ? Colors.white : Colors.grey),
                     label: ''),
               ],
             ),
@@ -79,70 +85,39 @@ class _BoughtTableState extends State<BoughtTable> {
     );
   }
 
-  _boughtTable() {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Gap(60),
-          updateAppBar(),
-          const Gap(20),
-          Text("${widget.restnt.name} Joy band qilish",
-              style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold, fontSize: 25)),
-          const Gap(60),
-          _getRestTable()
-        ],
-      ),
-    );
-  }
-
-  _getRestTable() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _rowBuilder("Restaurant                  ", widget.restnt.name ?? ""),
-        _gap,
-        Divider(color: Colors.grey.shade400),
-        _gap,
-        _rowBuilder("Kun                              ", "2-Yanvar 2023"),
-        _gap,
-        Divider(color: Colors.grey.shade400),
-        _gap,
-        _rowBuilder("Soat                              ", "07:00 PM"),
-        _gap,
-        Divider(color: Colors.grey.shade400),
-        _gap,
-        _rowBuilder("Mehmonlar Soni          ","4" ),
-        _gap,
-        Divider(color: Colors.grey.shade400),
-        _gap,
-        _rowBuilder("Stol Raqami                 ","3" ),
-        _gap,
-        Padding(padding: EdgeInsets.only(
-          top: 100,
-          bottom: 60,
-          right: 40,
-          left: 40,
+  _getBuyingTable() {
+    return SizedBox(
+      height: double.infinity,
+      width: MediaQuery.of(context).size.height,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Gap(40),
+            updateAppBar(),
+            const Gap(20),
+            Text("${widget.restnt.name} Joy band qilish",
+                style: GoogleFonts.nunitoSans(
+                    fontWeight: FontWeight.bold, fontSize: 25)),
+            Gap(MediaQuery.of(context).size.height / 2.3),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 50,
+                bottom: 20,
+                left: 40,
+                right: 40,
+              ),
+              child: buttonBuilder(
+                  () => navigate(context, EditedBoughtTable(restnt: widget.restnt)),
+                  "KEYINGISI",
+                  AppColors.appColor,
+                  GoogleFonts.nunitoSans(fontWeight: FontWeight.bold),
+                  AppColors.appColor),
+            )
+          ],
         ),
-        child: buttonBuilder(() =>navigatePushRemove(context, CongratsPlace(restnt: widget.restnt)), "TASDIQLASH", AppColors.appColor, GoogleFonts.nunitoSans(fontWeight: FontWeight.bold), AppColors.appColor),
-        )
-      ],
-    );
-  }
-
-  _rowBuilder(String restName, String restData) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 30.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(restName, style: GoogleFonts.nunitoSans(color: Colors.grey.shade800,fontWeight: FontWeight.bold)),
-          Text(restData, style: GoogleFonts.nunitoSans(color: Colors.grey.shade800,fontWeight: FontWeight.bold))
-        ],
       ),
     );
   }
@@ -191,17 +166,29 @@ class _BoughtTableState extends State<BoughtTable> {
                       itemBuilder: (BuildContext context) {
                         return <PopupMenuEntry<String>>[
                           PopupMenuItem(
-                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
+                              textStyle:
+                                  GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Andijon",
-                              child: Text("Andijon",style: GoogleFonts.nunitoSans(),)),
+                              child: Text(
+                                "Andijon",
+                                style: GoogleFonts.nunitoSans(),
+                              )),
                           PopupMenuItem(
-                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
+                              textStyle:
+                                  GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Toshkent",
-                              child: Text("Toshkent",style: GoogleFonts.nunitoSans(),)),
+                              child: Text(
+                                "Toshkent",
+                                style: GoogleFonts.nunitoSans(),
+                              )),
                           PopupMenuItem(
-                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
+                              textStyle:
+                                  GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Farg'ona",
-                              child: Text("Farg'ona",style: GoogleFonts.nunitoSans(),)),
+                              child: Text(
+                                "Farg'ona",
+                                style: GoogleFonts.nunitoSans(),
+                              )),
                         ];
                       },
                       onSelected: (String value) {

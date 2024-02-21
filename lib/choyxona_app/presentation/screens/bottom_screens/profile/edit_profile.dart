@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/profile/profile_page.dart';
@@ -11,7 +12,7 @@ import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 import '../borrom_search_page.dart';
 import '../home_page.dart';
-import '../location_page.dart';
+import '../location_rent/location_page.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -39,6 +40,8 @@ class _EditProfileState extends State<EditProfile> {
   TextEditingController _name = TextEditingController();
   TextEditingController _phone = TextEditingController();
   TextEditingController _bio = TextEditingController();
+
+  var maskFormatter = MaskTextInputFormatter(mask: "##-###-##-##");
 
   @override
   Widget build(BuildContext context) {
@@ -178,14 +181,13 @@ class _EditProfileState extends State<EditProfile> {
                 fontWeight: FontWeight.bold, fontSize: 13)),
         const Gap(10),
         AppTextField("VIshak eshak", false, _name,
-            IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.person))),
+            IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.person)),1),
         const Gap(23),
         Text("TELEFON RAQAMI",
             style: GoogleFonts.nunitoSans(
                 fontWeight: FontWeight.bold, fontSize: 13)),
         const Gap(10),
-        AppTextField("91-911-91-99", false, _phone,
-            IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.phone))),
+        _textField(),
         const Gap(23),
         Text("BIO",
             style: GoogleFonts.nunitoSans(
@@ -197,8 +199,54 @@ class _EditProfileState extends State<EditProfile> {
             _bio,
             IconButton(
                 onPressed: () {},
-                icon: Icon(CupertinoIcons.list_bullet_indent)))
+                icon: Icon(CupertinoIcons.pen)),
+        5
+        )
       ],
+    );
+  }
+
+  _textField() {
+    return TextField(
+      cursorColor: Colors.grey,
+      cursorHeight: 25,
+      inputFormatters: [maskFormatter],
+      keyboardType: TextInputType.number,
+      controller: _phone,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.white,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            width: 1,
+            color: Colors.grey.shade300,
+          ),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            width: 1,
+            color: Colors.grey,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            width: 1,
+            color: Colors.grey,
+          ),
+        ),
+        hintText: "91-999-91-91",
+        hintStyle: GoogleFonts.nunitoSans(fontSize: 16, color: Colors.grey),
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            CupertinoIcons.phone,
+            color: Colors.grey.shade400,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:untitled2/choyxona_app/exe_model/rest.dart';
+import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
+
+import 'detailed_meal.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -20,6 +24,7 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 
   _getAllRecipe() {
+    var rest = restntList[1];
     return Column(
       children: [
         SizedBox(
@@ -29,7 +34,7 @@ class _MenuScreenState extends State<MenuScreen> {
             itemCount: 12,
             itemBuilder: (context, index) {
               return InkWell(
-                onTap: (){},
+                onTap: ()=>navigate(context, MealDetailedPage(restnt:rest)),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Container(

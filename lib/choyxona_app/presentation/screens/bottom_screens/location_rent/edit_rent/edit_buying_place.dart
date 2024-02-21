@@ -4,24 +4,25 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/exe_model/rest.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/location_rent/edit_rent/edit_buying_table.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/buying_table.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
-import '../../bottom_screens/borrom_search_page.dart';
-import '../../bottom_screens/home_page.dart';
-import '../../bottom_screens/location_rent/location_page.dart';
-import '../../bottom_screens/profile/profile_page.dart';
 
-class BuyingPlace extends StatefulWidget {
-  const BuyingPlace({super.key, required this.restnt});
+import '../../borrom_search_page.dart';
+import '../../home_page.dart';
+import '../../profile/profile_page.dart';
+import '../location_page.dart';
+class EditBuyingPlace extends StatefulWidget {
+  const EditBuyingPlace({super.key, required this.restnt});
 
   final Restnt restnt;
 
   @override
-  State<BuyingPlace> createState() => _BuyingPlaceState();
+  State<EditBuyingPlace> createState() => _BuyingPlaceState();
 }
 
-class _BuyingPlaceState extends State<BuyingPlace> {
+class _BuyingPlaceState extends State<EditBuyingPlace> {
 
 
   bool sizedTapped = true;
@@ -99,7 +100,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           updateAppBar(),
           const Gap(20),
           Text("${widget.restnt.name} Joy band qilish", style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,
-          fontSize: 25)),
+              fontSize: 25)),
           const Gap(40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,7 +138,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
               left: 40,
               right: 40,
             ),
-            child: buttonBuilder(() =>navigate(context, BuyingTable(restnt: widget.restnt)), "KEYINGISI", AppColors.appColor,
+            child: buttonBuilder(() =>navigate(context, EditBuyingTable(restnt: widget.restnt)), "KEYINGISI", AppColors.appColor,
                 GoogleFonts.nunitoSans(color: Colors.white,fontWeight: FontWeight.bold), AppColors.appColor),
           )
         ],

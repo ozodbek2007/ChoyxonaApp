@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             CupertinoIcons.person,
                             size: 20,
                           ),
-                          onPressed: () {})),
+                          onPressed: () {}),1),
                   const Gap(20),
                   Text(
                     "Parol",
@@ -96,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             _isVisible = !_isVisible;
                           });
                         },
-                      )),
+                      ),1),
                   // const Gap(10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,

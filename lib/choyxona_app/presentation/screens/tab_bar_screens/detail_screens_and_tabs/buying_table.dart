@@ -10,7 +10,7 @@ import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 import '../../bottom_screens/borrom_search_page.dart';
 import '../../bottom_screens/home_page.dart';
-import '../../bottom_screens/location_page.dart';
+import '../../bottom_screens/location_rent/location_page.dart';
 import '../../bottom_screens/profile/profile_page.dart';
 
 class BuyingTable extends StatefulWidget {

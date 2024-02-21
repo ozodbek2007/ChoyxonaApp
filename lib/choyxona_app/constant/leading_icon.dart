@@ -15,3 +15,8 @@ leadingIcon(BuildContext context) {
         child: Center(child: Icon(Icons.arrow_back_ios,size: 20,)),
       ));
 }
+
+mainTheme(BuildContext context){
+  Color mainTheme = Theme.of(context).primaryColor;
+  return mainTheme;
+}

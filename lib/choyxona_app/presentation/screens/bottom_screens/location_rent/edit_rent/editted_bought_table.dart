@@ -3,26 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/location_rent/edit_rent/updated_congrast.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/congrast_bought_table.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
-import '../../../../exe_model/rest.dart';
-import '../../bottom_screens/borrom_search_page.dart';
-import '../../bottom_screens/home_page.dart';
-import '../../bottom_screens/location_rent/location_page.dart';
-import '../../bottom_screens/profile/profile_page.dart';
+import '../../../../../exe_model/rest.dart';
+import '../../borrom_search_page.dart';
+import '../../home_page.dart';
+import '../../profile/profile_page.dart';
+import '../location_page.dart';
 
-class BoughtTable extends StatefulWidget {
-  const BoughtTable({super.key, required this.restnt});
+
+class EditedBoughtTable extends StatefulWidget {
+  const EditedBoughtTable({super.key, required this.restnt});
 
   final Restnt restnt;
 
   @override
-  State<BoughtTable> createState() => _BoughtTableState();
+  State<EditedBoughtTable> createState() => _BoughtTableState();
 }
 
-class _BoughtTableState extends State<BoughtTable> {
+class _BoughtTableState extends State<EditedBoughtTable> {
   int _selectedIndex = 0;
 
   final _gap = Gap(10);
@@ -127,7 +129,7 @@ class _BoughtTableState extends State<BoughtTable> {
           right: 40,
           left: 40,
         ),
-        child: buttonBuilder(() =>navigatePushRemove(context, CongratsPlace(restnt: widget.restnt)), "TASDIQLASH", AppColors.appColor, GoogleFonts.nunitoSans(fontWeight: FontWeight.bold), AppColors.appColor),
+          child: buttonBuilder(() =>navigatePushRemove(context, UpdateCongratsPlace(restnt: widget.restnt)), "TASDIQLASH", AppColors.appColor, GoogleFonts.nunitoSans(fontWeight: FontWeight.bold), AppColors.appColor),
         )
       ],
     );

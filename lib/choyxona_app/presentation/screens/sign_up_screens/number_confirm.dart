@@ -76,7 +76,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
                     controller: _number,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: "00 000-00-00",
+                      hintText: "00-000-00-00",
                       hintStyle: TextStyles.descTextStyle,
                     ),
                   ),

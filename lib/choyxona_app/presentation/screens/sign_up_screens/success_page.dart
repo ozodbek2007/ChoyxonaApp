@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
+import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_up_screens/country_location/country_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
@@ -18,7 +19,7 @@ class _SuccessPageState extends State<SuccessPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: mainTheme(context),
       body: _welcomeSection(),
     );
   }
@@ -42,7 +43,7 @@ class _SuccessPageState extends State<SuccessPage> {
               ),
               const Gap(120),
               buttonBuilder(
-                  () => navigatePushRemove(context, MainPage()),
+                  () => navigatePushRemove(context, CountryPage()),
                   "Davom Etish",
                   AppColors.appColor,
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

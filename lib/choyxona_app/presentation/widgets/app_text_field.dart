@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextField extends StatelessWidget {
-  const AppTextField(this.hintText, this.isVisible, this.controller, this.myIcon);
-
+  const AppTextField(this.hintText, this.isVisible, this.controller, this.myIcon, this.maxLines);
+  final int maxLines;
   final String hintText;
   final bool isVisible;
   final TextEditingController controller;
@@ -12,6 +12,7 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: maxLines,
       cursorColor: Colors.grey,
       cursorHeight: 25,
       controller: controller,
