@@ -9,8 +9,6 @@ import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 class RentRest extends StatelessWidget {
   const RentRest({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -64,7 +62,8 @@ class RentRest extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             IconButton(
-                                onPressed: () =>navigate(context, EditBuyingPlace(restnt: resnt)),
+                                onPressed: () => navigate(
+                                    context, EditBuyingPlace(restnt: resnt)),
                                 icon: Icon(
                                   CupertinoIcons.pencil_circle_fill,
                                   color: Colors.black,
@@ -80,11 +79,7 @@ class RentRest extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        _tableImage(),
-                        _appData(),
-                        _userRentData()
-                      ],
+                      children: [_tableImage(), _appData(), _userRentData()],
                     )
                   ],
                 ),
@@ -102,39 +97,6 @@ class RentRest extends StatelessWidget {
       width: 85,
       color: AppColors.appColor,
       child: null,
-    );
-  }
-
-  _restInfo(){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _rowBuilder("Sana", "2-yanvar,2023"),
-        _rowBuilder("Vaqt", "7:00 PM"),
-        _rowBuilder("odam", "4"),
-        _rowBuilder("Stol", "3"),
-        ],
-    );
-  }
-
-  _rowBuilder(String appData, String restData){
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: SizedBox(
-        width: 150,
-        height: 20,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(appData, style: GoogleFonts.nunitoSans()),
-            Text(restData,
-                style: GoogleFonts.nunitoSans(
-                    fontSize: 13.04, fontWeight: FontWeight.bold)),
-          ],
-        ),
-      ),
     );
   }
 

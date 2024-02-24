@@ -9,7 +9,7 @@ import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 import '../../../../../exe_model/rest.dart';
-import '../../borrom_search_page.dart';
+import '../../search/borrom_search_page.dart';
 import '../../home_page.dart';
 import '../../profile/profile_page.dart';
 import '../location_page.dart';

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/exe_model/rest.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 import '../../../../constant/app_colors.dart';
-import '../../bottom_screens/borrom_search_page.dart';
+import '../../bottom_screens/search/borrom_search_page.dart';
 import '../../bottom_screens/home_page.dart';
 import '../../bottom_screens/location_rent/location_page.dart';
 import '../../bottom_screens/profile/profile_page.dart';

@@ -7,7 +7,7 @@ import 'package:untitled2/choyxona_app/exe_model/rest.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/tab_bar_screens/detail_screens_and_tabs/buying_table.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
-import '../../bottom_screens/borrom_search_page.dart';
+import '../../bottom_screens/search/borrom_search_page.dart';
 import '../../bottom_screens/home_page.dart';
 import '../../bottom_screens/location_rent/location_page.dart';
 import '../../bottom_screens/profile/profile_page.dart';

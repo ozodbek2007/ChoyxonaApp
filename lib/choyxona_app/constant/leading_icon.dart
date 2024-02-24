@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../presentation/widgets/navigators.dart';
@@ -19,4 +20,20 @@ leadingIcon(BuildContext context) {
 mainTheme(BuildContext context){
   Color mainTheme = Theme.of(context).primaryColor;
   return mainTheme;
+}
+
+leadingIconGrey(BuildContext context) {
+  return InkWell(
+    onTap: () => navigatePop(context),
+    child: Container(
+      height: 45,
+      width: 45,
+      decoration: BoxDecoration(
+          color: Color(0xffeaeef2),
+          borderRadius: BorderRadius.circular(10000)),
+      child: Center(
+        child: Icon(CupertinoIcons.back),
+      ),
+    ),
+  );
 }

@@ -10,7 +10,7 @@ import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_text_field.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
-import '../borrom_search_page.dart';
+import '../search/borrom_search_page.dart';
 import '../home_page.dart';
 import '../location_rent/location_page.dart';
 
@@ -110,7 +110,7 @@ class _EditProfileState extends State<EditProfile> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              _leadingIcon(),
+              leadingIconGrey(context),
               Text("    Edit profile",
                   style: GoogleFonts.nunitoSans(
                       fontWeight: FontWeight.bold, fontSize: 18)),
@@ -134,21 +134,7 @@ class _EditProfileState extends State<EditProfile> {
     );
   }
 
-  _leadingIcon() {
-    return InkWell(
-      onTap: () => navigatePop(context),
-      child: Container(
-        height: 45,
-        width: 45,
-        decoration: BoxDecoration(
-            color: Color(0xffeaeef2),
-            borderRadius: BorderRadius.circular(10000)),
-        child: Center(
-          child: Icon(CupertinoIcons.back),
-        ),
-      ),
-    );
-  }
+
 
   _imageSection() {
     return InkWell(
