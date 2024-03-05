@@ -29,7 +29,7 @@ class _MenuScreenState extends State<ReviewsScreen> {
               return Padding(
                 padding: EdgeInsets.only(bottom: 8),
                 child: Container(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 5),
                   height: 110,
                   width: double.infinity,
                   decoration: BoxDecoration(

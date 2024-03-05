@@ -33,6 +33,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
   }
 
   _confirmNumberSection() {
+    var _size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SingleChildScrollView(
@@ -66,7 +67,7 @@ class _NumberConfirmScreenState extends State<NumberConfirmScreen> {
                 Container(height: 30,width: 1,color: Colors.grey,child: null),
                 const Gap(10),
                 SizedBox(
-                  width: 300,
+                  width: _size.width -100,
                   height: 50,
                   child: TextField(
                     keyboardType: TextInputType.number,

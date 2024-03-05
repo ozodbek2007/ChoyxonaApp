@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
-import 'package:untitled2/choyxona_app/constant/text_styles.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/profile/edit_profile.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/single_screens/welcome_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
@@ -71,7 +70,7 @@ class _LocationPageState extends State<ProfilePage> {
                 Text('User bio clearly',
                     style: GoogleFonts.nunitoSans(color: Colors.grey)),
                 InkWell(
-                  onTap: () =>navigate(context, EditProfile()),
+                  onTap: () => navigate(context, EditProfile()),
                   child: Text("EDIT",
                       style: GoogleFonts.nunitoSans(
                           color: AppColors.appColor,
@@ -136,32 +135,30 @@ class _LocationPageState extends State<ProfilePage> {
   }
 
   _logOutSection() {
-    return InkWell(
-      onTap: () => navigate(context, WelcomePage()),
-      child: Container(
-        height: 80,
-        width: double.infinity,
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.shade400,
-                spreadRadius: 0.5,
-                blurRadius: 0.5,
-              )
-            ],
-            color: Colors.white,
-            border: Border.all(color: Colors.grey.shade400),
-            borderRadius: BorderRadius.circular(20)),
-        child: Center(
-          child: ListTile(
-            leading: Icon(Icons.exit_to_app, color: Colors.red),
-            titleAlignment: ListTileTitleAlignment.center,
-            title: Text("   Log Out",
-                style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold)),
-            trailing: Icon(
-              CupertinoIcons.forward,
+    return Container(
+      height: 80,
+      width: double.infinity,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
               color: Colors.grey.shade400,
-            ),
+              spreadRadius: 0.5,
+              blurRadius: 0.5,
+            )
+          ],
+          color: Colors.white,
+          border: Border.all(color: Colors.grey.shade400),
+          borderRadius: BorderRadius.circular(20)),
+      child: Center(
+        child: ListTile(
+          onTap: () => navigate(context, WelcomePage()),
+          leading: Icon(Icons.exit_to_app, color: Colors.red),
+          titleAlignment: ListTileTitleAlignment.center,
+          title: Text("   Log Out",
+              style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold)),
+          trailing: Icon(
+            CupertinoIcons.forward,
+            color: Colors.grey.shade400,
           ),
         ),
       ),

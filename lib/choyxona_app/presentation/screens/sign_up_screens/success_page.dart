@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
 import 'package:untitled2/choyxona_app/constant/text_styles.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/sign_up_screens/country_location/chooso_laction.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/sign_up_screens/country_location/country_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/app_button.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
@@ -33,6 +34,7 @@ class _SuccessPageState extends State<SuccessPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Lottie.asset("assets/anim/anim1.json", width: 300, height: 300),
+
               Text("Xush Kelibsiz!", style: TextStyles.titleTextStyle),
               const Gap(30),
               Padding(
@@ -43,7 +45,7 @@ class _SuccessPageState extends State<SuccessPage> {
               ),
               const Gap(120),
               buttonBuilder(
-                  () => navigatePushRemove(context, CountryPage()),
+                  () => navigatePushRemove(context, ChooseLocation()),
                   "Davom Etish",
                   AppColors.appColor,
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

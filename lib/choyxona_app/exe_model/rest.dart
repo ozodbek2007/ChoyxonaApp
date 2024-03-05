@@ -52,5 +52,4 @@ final restntList = [
     managerNum: "88 888 88 88",
     restNum: "88 888 88 88",
   ),
-
 ];

@@ -22,8 +22,6 @@ class BuyingPlace extends StatefulWidget {
 }
 
 class _BuyingPlaceState extends State<BuyingPlace> {
-
-
   bool sizedTapped = true;
 
   int _selectedIndex = 0;
@@ -45,7 +43,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body:_selectedIndex ==0 ? _getBuyingTime() : _screens[_selectedIndex],
+      body: _selectedIndex == 0 ? _getBuyingTime() : _screens[_selectedIndex],
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 10, left: 15, right: 15),
         child: SizedBox(
@@ -63,20 +61,28 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                     backgroundColor: Colors.black,
                     icon: Padding(
                       padding: const EdgeInsets.only(top: 18),
-                      child: Icon(CupertinoIcons.home,color: _selectedIndex == 0 ? Colors.white : Colors.grey),
+                      child: Icon(CupertinoIcons.home,
+                          color:
+                              _selectedIndex == 0 ? Colors.white : Colors.grey),
                     ),
                     label: ''),
                 BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(Icons.location_on_rounded,color: _selectedIndex == 1 ? Colors.white : Colors.grey),
+                    icon: Icon(Icons.location_on_rounded,
+                        color:
+                            _selectedIndex == 1 ? Colors.white : Colors.grey),
                     label: ''),
                 BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(CupertinoIcons.search,color: _selectedIndex == 2 ? Colors.white : Colors.grey),
+                    icon: Icon(CupertinoIcons.search,
+                        color:
+                            _selectedIndex == 2 ? Colors.white : Colors.grey),
                     label: ''),
                 BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(CupertinoIcons.person,color: _selectedIndex == 3 ? Colors.white : Colors.grey),
+                    icon: Icon(CupertinoIcons.person,
+                        color:
+                            _selectedIndex == 3 ? Colors.white : Colors.grey),
                     label: ''),
               ],
             ),
@@ -85,8 +91,6 @@ class _BuyingPlaceState extends State<BuyingPlace> {
       ),
     );
   }
-
-
 
   _getBuyingTime() {
     return SingleChildScrollView(
@@ -98,14 +102,18 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           const Gap(40),
           updateAppBar(),
           const Gap(20),
-          Text("${widget.restnt.name} Joy band qilish", style: GoogleFonts.nunitoSans(fontWeight: FontWeight.bold,
-          fontSize: 25)),
+          Text("${widget.restnt.name} Joy band qilish",
+              style: GoogleFonts.nunitoSans(
+                  fontWeight: FontWeight.bold, fontSize: 25)),
           const Gap(40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Brom qilish sanasini tanlang",style: GoogleFonts.nunitoSans(),),
+              Text(
+                "Brom qilish sanasini tanlang",
+                style: GoogleFonts.nunitoSans(),
+              ),
               SizedBox(
                 height: 30,
                 width: 100,
@@ -113,8 +121,14 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("2-7 yanvar",style: GoogleFonts.nunitoSans(),),
-                    Icon(Icons.skip_next_rounded,size: 20,)
+                    Text(
+                      "2-7 yanvar",
+                      style: GoogleFonts.nunitoSans(),
+                    ),
+                    Icon(
+                      Icons.skip_next_rounded,
+                      size: 20,
+                    )
                   ],
                 ),
               )
@@ -123,11 +137,17 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           // const Gap(10),
           _getTheDate(),
           const Gap(25),
-          Text("Brom qilish vaqtini tanlang",style: GoogleFonts.nunitoSans(),),
+          Text(
+            "Brom qilish vaqtini tanlang",
+            style: GoogleFonts.nunitoSans(),
+          ),
           // const Gap(10),
           _getTimeToBuy(),
           const Gap(25),
-          Text("Odamlar sonini tanlang",style: GoogleFonts.nunitoSans(),),
+          Text(
+            "Odamlar sonini tanlang",
+            style: GoogleFonts.nunitoSans(),
+          ),
           // const Gap(10),
           _getNumberPeople(),
           Padding(
@@ -137,8 +157,13 @@ class _BuyingPlaceState extends State<BuyingPlace> {
               left: 40,
               right: 40,
             ),
-            child: buttonBuilder(() =>navigate(context, BuyingTable(restnt: widget.restnt)), "KEYINGISI", AppColors.appColor,
-                GoogleFonts.nunitoSans(color: Colors.white,fontWeight: FontWeight.bold), AppColors.appColor),
+            child: buttonBuilder(
+                () => navigate(context, BuyingTable(restnt: widget.restnt)),
+                "KEYINGISI",
+                AppColors.appColor,
+                GoogleFonts.nunitoSans(
+                    color: Colors.white, fontWeight: FontWeight.bold),
+                AppColors.appColor),
           )
         ],
       ),
@@ -147,7 +172,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
 
   String _district = "Andijon";
 
-  updateAppBar(){
+  updateAppBar() {
     return SizedBox(
       height: 60,
       width: double.infinity,
@@ -189,17 +214,29 @@ class _BuyingPlaceState extends State<BuyingPlace> {
                       itemBuilder: (BuildContext context) {
                         return <PopupMenuEntry<String>>[
                           PopupMenuItem(
-                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
+                              textStyle:
+                                  GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Andijon",
-                              child: Text("Andijon",style: GoogleFonts.nunitoSans(),)),
+                              child: Text(
+                                "Andijon",
+                                style: GoogleFonts.nunitoSans(),
+                              )),
                           PopupMenuItem(
-                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
+                              textStyle:
+                                  GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Toshkent",
-                              child: Text("Toshkent",style: GoogleFonts.nunitoSans(),)),
+                              child: Text(
+                                "Toshkent",
+                                style: GoogleFonts.nunitoSans(),
+                              )),
                           PopupMenuItem(
-                              textStyle: GoogleFonts.nunitoSans(color: Colors.grey),
+                              textStyle:
+                                  GoogleFonts.nunitoSans(color: Colors.grey),
                               value: "Farg'ona",
-                              child: Text("Farg'ona",style: GoogleFonts.nunitoSans(),)),
+                              child: Text(
+                                "Farg'ona",
+                                style: GoogleFonts.nunitoSans(),
+                              )),
                         ];
                       },
                       onSelected: (String value) {
@@ -240,29 +277,29 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           itemBuilder: (context, index) {
             MyDates data = dateList[index];
             return Padding(
-              padding: const EdgeInsets.only(top: 5,bottom: 5,left: 15.0),
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    data.isTrue = !data.isTrue;
-                  });
-                },
-                child: AnimatedContainer(
-                  curve: Curves.fastOutSlowIn,
-                  duration: const Duration(seconds: 1),
-                  width: 50,
-                  height: data.isTrue ? 100 : 50,
-                  decoration: BoxDecoration(
-                      color: data.isTrue ? Colors.white : AppColors.appColor,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 3,
-                          blurRadius: 3,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ]),
+              padding: const EdgeInsets.only(top: 5, bottom: 5, left: 15.0),
+              child: AnimatedContainer(
+                curve: Curves.fastOutSlowIn,
+                duration: const Duration(seconds: 1),
+                width: 50,
+                height: data.isTrue ? 100 : 50,
+                decoration: BoxDecoration(
+                    color: data.isTrue ? Colors.white : AppColors.appColor,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ]),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      data.isTrue = !data.isTrue;
+                    });
+                  },
                   child: Center(
                     child: Text("${data.date}",
                         style: GoogleFonts.nunitoSans(
@@ -287,7 +324,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
         itemBuilder: (context, index) {
           MyTimes time = timeList[index];
           return Padding(
-            padding: const EdgeInsets.only(top: 5,bottom: 5,left: 15.0),
+            padding: const EdgeInsets.only(top: 5, bottom: 5, left: 15.0),
             child: InkWell(
               onTap: () {
                 setState(() {
@@ -335,7 +372,7 @@ class _BuyingPlaceState extends State<BuyingPlace> {
           itemBuilder: (context, index) {
             MyNumberH data = numberList[index];
             return Padding(
-              padding: const EdgeInsets.only(top: 5,bottom: 5,left: 15.0),
+              padding: const EdgeInsets.only(top: 5, bottom: 5, left: 15.0),
               child: InkWell(
                 onTap: () {
                   setState(() {
@@ -372,8 +409,6 @@ class _BuyingPlaceState extends State<BuyingPlace> {
     );
   }
 }
-
-
 
 class MyDates {
   int date;

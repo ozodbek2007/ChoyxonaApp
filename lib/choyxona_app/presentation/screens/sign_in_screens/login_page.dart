@@ -193,28 +193,25 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const Gap(30),
              Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 122,
-                  child: Divider(
-                    thickness: 2,
-                    color: Color(0xffD8DADC),
-                  ),
+                Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width /4,
+                  color: Color(0xffD8DADC),
                 ),
-                Gap(10),
                 SizedBox(
                   width: 104,
                   height: 18,
                   child: Text("Yoki bilan kiring",style: GoogleFonts.nunitoSans(),),
                 ),
-                Gap(12),
-                SizedBox(
-                  width: 110,
-                  child: Divider(
-                    thickness: 2,
-                    color: Color(0xffD8DADC),
-                  ),
+                Container(
+                  height: 1,
+                  width: MediaQuery.of(context).size.width /4,
+                  color: Color(0xffD8DADC),
                 ),
+
               ],
             ),
             const Gap(30),

@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/constant/leading_icon.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
 
 import '../../../widgets/navigators.dart';
 import 'key_search.dart';
@@ -39,7 +40,19 @@ class _LocationPageState extends State<BottomSearchScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              leadingIconGrey(context),
+              InkWell(
+                onTap: () => navigate(context,MainPage()),
+                child: Container(
+                  height: 45,
+                  width: 45,
+                  decoration: BoxDecoration(
+                      color: Color(0xffeaeef2),
+                      borderRadius: BorderRadius.circular(10000)),
+                  child: Center(
+                    child: Icon(CupertinoIcons.back),
+                  ),
+                ),
+              ),
               Text(
                 "    Qidirmoq",
                 style: GoogleFonts.nunitoSans(fontSize: 18),
@@ -95,8 +108,6 @@ class _LocationPageState extends State<BottomSearchScreen> {
       ),
     );
   }
-
-
 
   List _keyWords = [
     "Burger",

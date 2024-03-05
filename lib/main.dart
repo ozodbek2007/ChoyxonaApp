@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/home_page.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/search/borrom_search_page.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/main_page.dart';
-import 'package:untitled2/choyxona_app/presentation/screens/single_screens/welcome_page.dart';
-
-import 'choyxona_app/presentation/screens/sign_up_screens/country_location/district_page.dart';
-
 
 void main(){
   runApp(ChoyxonaApp());

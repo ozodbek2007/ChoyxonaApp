@@ -20,27 +20,22 @@ class _LocationPageState extends State<LocationPage> {
     return Scaffold(
       floatingActionButton: Align(
         alignment: Alignment.bottomCenter,
-        child: InkWell(
-          onTap: (){},
-          child: Ink(
-            child: Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey.shade300,
-                        spreadRadius: 2,
-                        blurRadius: 2
-                    )
-                  ],
-                  color: Colors.white,
-                  border: Border.all(color: Colors.grey.shade300),
-                  borderRadius: BorderRadius.circular(100)),
-              child: Center(
-                child: Icon(Icons.add),
-              ),
-            ),
+        child: Container(
+          height: 55,
+          width: 55,
+          decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.shade300,
+                    spreadRadius: 2,
+                    blurRadius: 2
+                )
+              ],
+              color: Colors.white,
+              border: Border.all(color: Colors.grey.shade300),
+              borderRadius: BorderRadius.circular(100)),
+          child: Center(
+            child: IconButton(onPressed: (){},splashRadius: 30,icon:Icon(Icons.add)),
           ),
         ),
       ),

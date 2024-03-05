@@ -28,8 +28,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
   bool _iconTapped = true;
 
+
+
   @override
   Widget build(BuildContext context) {
+
+    var _size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: _registerSection(),
@@ -191,9 +195,10 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   _faceGoogleBuilder(String imgPath, String companyName) {
+    var _size = MediaQuery.of(context).size;
     return Container(
       height: 60,
-      width: 180,
+      width: _size.width /2.6,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(

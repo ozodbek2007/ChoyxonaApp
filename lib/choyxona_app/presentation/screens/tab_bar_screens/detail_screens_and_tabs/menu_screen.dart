@@ -33,16 +33,16 @@ class _MenuScreenState extends State<MenuScreen> {
           child: ListView.builder(
             itemCount: 12,
             itemBuilder: (context, index) {
-              return InkWell(
-                onTap: ()=>navigate(context, MealDetailedPage(restnt:rest)),
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Container(
-                    height: 120,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.grey.shade400)),
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Container(
+                  height: 120,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.grey.shade400)),
+                  child: InkWell(
+                    onTap: ()=>navigate(context, MealDetailedPage(restnt:rest)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,

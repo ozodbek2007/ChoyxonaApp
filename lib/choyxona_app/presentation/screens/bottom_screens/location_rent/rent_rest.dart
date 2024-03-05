@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:untitled2/choyxona_app/exe_model/rest.dart';
 import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/location_rent/edit_rent/edit_buying_place.dart';
+import 'package:untitled2/choyxona_app/presentation/screens/bottom_screens/location_rent/map_page.dart';
 import 'package:untitled2/choyxona_app/presentation/widgets/navigators.dart';
 
 class RentRest extends StatelessWidget {
@@ -28,60 +29,68 @@ class RentRest extends StatelessWidget {
       child: ListView.builder(
         itemCount: 4,
         itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {},
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                height: 175,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade300,
-                          spreadRadius: 2,
-                          blurRadius: 2)
-                    ],
-                    color: Colors.white,
-                    border: Border.all(color: Colors.grey.shade300),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text("Rest name",
-                            style: GoogleFonts.nunitoSans(
-                                fontWeight: FontWeight.bold, fontSize: 23)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            IconButton(
-                                onPressed: () => navigate(
-                                    context, EditBuyingPlace(restnt: resnt)),
-                                icon: Icon(
-                                  CupertinoIcons.pencil_circle_fill,
-                                  color: Colors.black,
-                                )),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(CupertinoIcons.delete_solid,
-                                    color: Colors.red))
-                          ],
-                        )
-                      ],
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [_tableImage(), _appData(), _userRentData()],
-                    )
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 10.0),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              height: 175,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.shade300,
+                        spreadRadius: 2,
+                        blurRadius: 2)
                   ],
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(20)),
+              child: InkWell(
+                onTap: (){},
+                child: Ink(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text("Rest name",
+                              style: GoogleFonts.nunitoSans(
+                                  fontWeight: FontWeight.bold, fontSize: 23)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                  onPressed: () => navigate(
+                                      context, EditBuyingPlace(restnt: resnt)),
+                                  icon: Icon(
+                                    CupertinoIcons.pencil_circle_fill,
+                                    color: Colors.black,
+                                  )),IconButton(
+                                  onPressed: () => navigate(
+                                      context, MapPage()),
+                                  icon: Icon(
+                                    Icons.location_on_rounded,
+                                    color: AppColors.appColor,
+                                  )),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(CupertinoIcons.delete_solid,
+                                      color: Colors.red))
+                            ],
+                          )
+                        ],
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [_tableImage(), _appData(), _userRentData()],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

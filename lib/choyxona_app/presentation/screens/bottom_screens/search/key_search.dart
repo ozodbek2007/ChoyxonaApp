@@ -265,5 +265,4 @@ class _DetailedKeyWordState extends State<DetailedKeyWord> {
      ),
    );
  }
-
 }
