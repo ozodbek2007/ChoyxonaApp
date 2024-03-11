@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:untitled2/choyxona_app/constant/app_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MapPage extends StatefulWidget {
@@ -64,6 +65,7 @@ class _MapPageState extends State<MapPage> {
                                           child: SingleChildScrollView(
                                             child: Column(
                                               children: [
+                                                const Gap(30),
                                                 ListTile(
                                                   leading: ClipRRect(
                                                       borderRadius: BorderRadius
@@ -302,7 +304,7 @@ class _MapPageState extends State<MapPage> {
                     ),
                   );
                 });
-          }, child: Text("Bottomsheet")),
+          }, child: Text("Qardoshimni Ko'rsat",style: GoogleFonts.nunitoSans(color:AppColors.appColor))),
         ],
       ),
     );

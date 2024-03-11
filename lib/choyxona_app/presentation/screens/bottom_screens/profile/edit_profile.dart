@@ -137,24 +137,25 @@ class _EditProfileState extends State<EditProfile> {
 
 
   _imageSection() {
-    return InkWell(
-      onTap: () {},
-      child: Stack(children: [
-        Container(
+    return Stack(children: [
+      InkWell(
+        onTap: (){},
+        child: Container(
           height: 150,
           width: 150,
           decoration: BoxDecoration(
               color: Color(0xffd3fded),
               borderRadius: BorderRadius.circular(10000)),
+          child: null,
         ),
-        Positioned(
-            right: 0,
-            bottom: 0,
-            child: Center(
-                child: Icon(CupertinoIcons.pencil_circle_fill,
-                    size: 45, color: AppColors.appColor)))
-      ]),
-    );
+      ),
+      Positioned(
+          right: 0,
+          bottom: 0,
+          child: Center(
+              child: Icon(CupertinoIcons.pencil_circle_fill,
+                  size: 45, color: AppColors.appColor)))
+    ]);
   }
 
   _editingSection() {
